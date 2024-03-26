@@ -1,0 +1,1258 @@
+{
+	"name": "BeatStep",
+	"usbVendorId": 7285,
+	"manufacturerId": "00206B",
+	"familyId": "0200",
+	"productId": "42",
+	"projectId": 18,
+
+	"alternatives": 
+	[{
+	    "usbProductId": 518,
+		"familyMemberId": "0600",
+	    "sku": "beatstep",
+	    "firmwareUpdater":
+	    {
+	    	"name": "midiplus",
+	    	"updaterUsbVendorId": 7285,
+	    	"updaterUsbProductId": 518,
+	    	"firmwareFilePattern": "BeatStep*.led",
+	    	"userRebootMessage": "Please unplug the device, then plug it in again.",
+	    	"extraParameters":
+	    	{
+	    		"productCode": 60,
+	    		"productKey": [90, 87, 110, 40, 60, 78, 60]
+	    	}
+	    }
+	}],
+
+	"imagePath": "BeatStep.png",
+    "templateExtension": ".beatstep",
+    "memories": 16,
+	"protocol": "arturia_v2",
+	"actions": ["store", "recall", "sync"],
+	"firmwareFormat": "$3.$2.$1.$0",
+
+	"fields": [ 
+	{
+		"id": 1,
+		"name": "Global Channel",
+		"paramId": 64,
+		"globalParamId": 6,
+		"type": "CHANNEL"
+	},
+
+	{
+		"id": 3,
+		"name": "Knob Acceleration",
+		"paramId": 65,
+		"globalParamId": 4,
+		"type": "LIST",
+		"list": [{ "str": "Slow (Off)", "val": 0 }, { "str": "Medium", "val": 1 }, { "str": "Fast", "val": 2 }]
+	},
+
+	{
+		"id": 5,
+		"name": "Pad Velocity Curve",
+		"paramId": 65,
+		"globalParamId": 3,
+		"type": "LIST",
+		"list": [{ "str": "Linear", "val": 0 }, { "str": "Logarithmic", "val": 1 },
+						 { "str": "Exponential", "val": 2 }, { "str": "Full", "val": 3 }]
+	},
+
+	{
+		"id": 101,
+		"name": "Sequencer Channel",
+		"paramId": 80,
+		"globalParamId": 1,
+		"type": "CHANNEL",
+		"list": [{ "str": "Global", "val": 65 }]
+	},
+
+	{
+		"id": 102,
+		"name": "Overall Transpose",
+		"paramId": 80,
+		"globalParamId": 2,
+		"type": "LIST",
+		"list": [{ "str": "-12", "val": 48 }, { "str": "-11", "val": 49 }, { "str": "-10", "val": 50 }, { "str": "-9", "val": 51 }, 
+			{ "str": "-8", "val": 52 }, { "str": "-7", "val": 53 }, { "str": "-6", "val": 54 }, { "str": "-5", "val": 55 }, 
+			{ "str": "-4", "val": 56 }, { "str": "-3", "val": 57 }, { "str": "-2", "val": 58 }, { "str": "-1", "val": 59 }, 
+			{ "str": "0", "val": 60 }, 
+			{ "str": "+1", "val": 61 }, { "str": "+2", "val": 62 }, { "str": "+3", "val": 63 }, { "str": "+4", "val": 64 }, 
+			{ "str": "+5", "val": 65 }, { "str": "+6", "val": 66 }, { "str": "+7", "val": 67 }, { "str": "+8", "val": 68 }, 
+			{ "str": "+9", "val": 69 }, { "str": "+10", "val": 70 }, { "str": "+11", "val": 71 }, { "str": "+12", "val": 72 } ]
+	},
+
+	{
+		"id": 103,
+		"name": "Scale Type",
+		"paramId": 80,
+		"globalParamId": 3,
+		"type": "LIST",
+		"list": [{ "str": "Chromatic", "val": 0 }, { "str": "Major", "val": 1 }, { "str": "Minor", "val": 2 }, { "str": "Dorian", "val": 3 },
+			{ "str": "Mixolydian", "val": 4 }, { "str": "Harmonic Minor", "val": 5 }, { "str": "Blues", "val": 6 }, { "str": "User", "val": 7 }]
+	},
+
+	{
+		"id": 104,
+		"name": "Pattern Mode",
+		"paramId": 80,
+		"globalParamId": 4,
+		"type": "LIST",
+		"list": [{ "str": "Forward", "val": 0 }, { "str": "Reverse", "val": 1 }, { "str": "Alternate", "val": 2 }, { "str": "Random", "val": 3 }]
+	},
+
+	{
+		"id": 105,
+		"name": "Step Size",
+		"paramId": 80,
+		"globalParamId": 5,
+		"type": "LIST",
+		"list": [{ "str": "1/4", "val": 0 }, { "str": "1/8", "val": 1 }, { "str": "1/16", "val": 2 }, { "str": "1/32", "val": 3 }]
+	},
+
+	{
+		"id": 106,
+		"name": "Pattern Length",
+		"paramId": 80,
+		"globalParamId": 6,
+		"type": "LIST",
+		"list": [{ "str": "1", "val": 1 }, { "str": "2", "val": 2 }, { "str": "3", "val": 3 }, { "str": "4", "val": 4 },
+			{ "str": "5", "val": 5 }, { "str": "6", "val": 6 }, { "str": "7", "val": 7 }, { "str": "8", "val": 8 },
+			{ "str": "9", "val": 9 }, { "str": "10", "val": 10 }, { "str": "11", "val": 11 }, { "str": "12", "val": 12 },
+			{ "str": "13", "val": 13 }, { "str": "14", "val": 14 }, { "str": "15", "val": 15 }, { "str": "16", "val": 16 }]
+	},
+
+	{
+		"id": 107,
+		"name": "Swing",
+		"paramId": 80,
+		"globalParamId": 7,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 50,
+		"maxValue": 75
+	},
+
+	{
+		"id": 108,
+		"name": "Gate Time",
+		"paramId": 80,
+		"globalParamId": 8,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 50,
+		"maxValue": 99
+	},
+
+	{
+		"id": 109,
+		"name": "Legato",
+		"paramId": 80,
+		"globalParamId": 9,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }, { "str": "Reset", "val": 2 }]
+	},
+
+	{
+		"id": 110,
+		"name": "User Scale - Lower",
+		"paramId": 80,
+		"globalParamId": 10,
+		"type": "LIST",
+		"list": [
+			{ "str": "I ", "val":  1  }, 
+			{ "str": "I IIb ", "val":  3  }, 
+			{ "str": "I II ", "val":  5  }, 
+			{ "str": "I IIb II ", "val":  7  }, 
+			{ "str": "I IIIb ", "val":  9  }, 
+			{ "str": "I IIb IIIb ", "val":  11  }, 
+			{ "str": "I II IIIb ", "val":  13  }, 
+			{ "str": "I IIb II IIIb ", "val":  15  }, 
+			{ "str": "I III ", "val":  17  }, 
+			{ "str": "I IIb III ", "val":  19  }, 
+			{ "str": "I II III ", "val":  21  }, 
+			{ "str": "I IIb II III ", "val":  23  }, 
+			{ "str": "I IIIb III ", "val":  25  }, 
+			{ "str": "I IIb IIIb III ", "val":  27  }, 
+			{ "str": "I II IIIb III ", "val":  29  }, 
+			{ "str": "I IIb II IIIb III ", "val":  31  }, 
+			{ "str": "I IV ", "val":  33  }, 
+			{ "str": "I IIb IV ", "val":  35  }, 
+			{ "str": "I II IV ", "val":  37  }, 
+			{ "str": "I IIb II IV ", "val":  39  }, 
+			{ "str": "I IIIb IV ", "val":  41  }, 
+			{ "str": "I IIb IIIb IV ", "val":  43  }, 
+			{ "str": "I II IIIb IV ", "val":  45  }, 
+			{ "str": "I IIb II IIIb IV ", "val":  47  }, 
+			{ "str": "I III IV ", "val":  49  }, 
+			{ "str": "I IIb III IV ", "val":  51  }, 
+			{ "str": "I II III IV ", "val":  53  }, 
+			{ "str": "I IIb II III IV ", "val":  55  }, 
+			{ "str": "I IIIb III IV ", "val":  57  }, 
+			{ "str": "I IIb IIIb III IV ", "val":  59  }, 
+			{ "str": "I II IIIb III IV ", "val":  61  }, 
+			{ "str": "I IIb II IIIb III IV ", "val":  63  }
+		]
+	},
+
+	{
+		"id": 111,
+		"name": "User Scale - Upper",
+		"paramId": 80,
+		"globalParamId": 11,
+		"type": "LIST",
+		"list": [
+			{ "str": "...", "val":  0  }, 
+			{ "str": "IV# ", "val":  1  }, 
+			{ "str": "V ", "val":  2  }, 
+			{ "str": "IV# V ", "val":  3  }, 
+			{ "str": "VIb ", "val":  4  }, 
+			{ "str": "IV# VIb ", "val":  5  }, 
+			{ "str": "V VIb ", "val":  6  }, 
+			{ "str": "IV# V VIb ", "val":  7  }, 
+			{ "str": "VI ", "val":  8  }, 
+			{ "str": "IV# VI ", "val":  9  }, 
+			{ "str": "V VI ", "val":  10  }, 
+			{ "str": "IV# V VI ", "val":  11  }, 
+			{ "str": "VIb VI ", "val":  12  }, 
+			{ "str": "IV# VIb VI ", "val":  13  }, 
+			{ "str": "V VIb VI ", "val":  14  }, 
+			{ "str": "IV# V VIb VI ", "val":  15  }, 
+			{ "str": "VIIb ", "val":  16  }, 
+			{ "str": "IV# VIIb ", "val":  17  }, 
+			{ "str": "V VIIb ", "val":  18  }, 
+			{ "str": "IV# V VIIb ", "val":  19  }, 
+			{ "str": "VIb VIIb ", "val":  20  }, 
+			{ "str": "IV# VIb VIIb ", "val":  21  }, 
+			{ "str": "V VIb VIIb ", "val":  22  }, 
+			{ "str": "IV# V VIb VIIb ", "val":  23  }, 
+			{ "str": "VI VIIb ", "val":  24  }, 
+			{ "str": "IV# VI VIIb ", "val":  25  }, 
+			{ "str": "V VI VIIb ", "val":  26  }, 
+			{ "str": "IV# V VI VIIb ", "val":  27  }, 
+			{ "str": "VIb VI VIIb ", "val":  28  }, 
+			{ "str": "IV# VIb VI VIIb ", "val":  29  }, 
+			{ "str": "V VIb VI VIIb ", "val":  30  }, 
+			{ "str": "IV# V VIb VI VIIb ", "val":  31  }, 
+			{ "str": "VII ", "val":  32  }, 
+			{ "str": "IV# VII ", "val":  33  }, 
+			{ "str": "V VII ", "val":  34  }, 
+			{ "str": "IV# V VII ", "val":  35  }, 
+			{ "str": "VIb VII ", "val":  36  }, 
+			{ "str": "IV# VIb VII ", "val":  37  }, 
+			{ "str": "V VIb VII ", "val":  38  }, 
+			{ "str": "IV# V VIb VII ", "val":  39  }, 
+			{ "str": "VI VII ", "val":  40  }, 
+			{ "str": "IV# VI VII ", "val":  41  }, 
+			{ "str": "V VI VII ", "val":  42  }, 
+			{ "str": "IV# V VI VII ", "val":  43  }, 
+			{ "str": "VIb VI VII ", "val":  44  }, 
+			{ "str": "IV# VIb VI VII ", "val":  45  }, 
+			{ "str": "V VIb VI VII ", "val":  46  }, 
+			{ "str": "IV# V VIb VI VII ", "val":  47  }, 
+			{ "str": "VIIb VII ", "val":  48  }, 
+			{ "str": "IV# VIIb VII ", "val":  49  }, 
+			{ "str": "V VIIb VII ", "val":  50  }, 
+			{ "str": "IV# V VIIb VII ", "val":  51  }, 
+			{ "str": "VIb VIIb VII ", "val":  52  }, 
+			{ "str": "IV# VIb VIIb VII ", "val":  53  }, 
+			{ "str": "V VIb VIIb VII ", "val":  54  }, 
+			{ "str": "IV# V VIb VIIb VII ", "val":  55  }, 
+			{ "str": "VI VIIb VII ", "val":  56  }, 
+			{ "str": "IV# VI VIIb VII ", "val":  57  }, 
+			{ "str": "V VI VIIb VII ", "val":  58  }, 
+			{ "str": "IV# V VI VIIb VII ", "val":  59  }, 
+			{ "str": "VIb VI VIIb VII ", "val":  60  }, 
+			{ "str": "IV# VIb VI VIIb VII ", "val":  61  }, 
+			{ "str": "V VIb VI VIIb VII ", "val":  62  }, 
+			{ "str": "IV# V VIb VI VIIb VII ", "val":  63  }
+		]
+	},
+
+	{
+		"id": 112,
+		"name": "CV/Gate Channel",
+		"paramId": 80,
+		"globalParamId": 12,
+		"type": "CHANNEL",
+		"list": [{ "str": "Global", "val": 65 }]
+	},
+
+	{
+		"id": 200,
+		"name": "Note #1",
+		"paramId": 82,
+		"globalParamId": 0,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 201,
+		"name": "Note #2",
+		"paramId": 82,
+		"globalParamId": 1,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 202,
+		"name": "Note #3",
+		"paramId": 82,
+		"globalParamId": 2,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 203,
+		"name": "Note #4",
+		"paramId": 82,
+		"globalParamId": 3,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 204,
+		"name": "Note #5",
+		"paramId": 82,
+		"globalParamId": 4,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 205,
+		"name": "Note #6",
+		"paramId": 82,
+		"globalParamId": 5,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 206,
+		"name": "Note #7",
+		"paramId": 82,
+		"globalParamId": 6,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 207,
+		"name": "Note #8",
+		"paramId": 82,
+		"globalParamId": 7,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 208,
+		"name": "Note #9",
+		"paramId": 82,
+		"globalParamId": 8,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 209,
+		"name": "Note #10",
+		"paramId": 82,
+		"globalParamId": 9,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 210,
+		"name": "Note #11",
+		"paramId": 82,
+		"globalParamId": 10,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 211,
+		"name": "Note #12",
+		"paramId": 82,
+		"globalParamId": 11,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 212,
+		"name": "Note #13",
+		"paramId": 82,
+		"globalParamId": 12,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 213,
+		"name": "Note #14",
+		"paramId": 82,
+		"globalParamId": 13,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 214,
+		"name": "Note #15",
+		"paramId": 82,
+		"globalParamId": 14,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 215,
+		"name": "Note #16",
+		"paramId": 82,
+		"globalParamId": 15,
+		"type": "RANGE",
+		"minValue": 36,
+		"maxValue": 84
+	},
+
+	{
+		"id": 300,
+		"name": "Step #1",
+		"paramId": 83,
+		"globalParamId": 0,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 301,
+		"name": "Step #2",
+		"paramId": 83,
+		"globalParamId": 1,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 302,
+		"name": "Step #3",
+		"paramId": 83,
+		"globalParamId": 2,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 303,
+		"name": "Step #4",
+		"paramId": 83,
+		"globalParamId": 3,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 304,
+		"name": "Step #5",
+		"paramId": 83,
+		"globalParamId": 4,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 305,
+		"name": "Step #6",
+		"paramId": 83,
+		"globalParamId": 5,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 306,
+		"name": "Step #7",
+		"paramId": 83,
+		"globalParamId": 6,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 307,
+		"name": "Step #8",
+		"paramId": 83,
+		"globalParamId": 7,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 308,
+		"name": "Step #9",
+		"paramId": 83,
+		"globalParamId": 8,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 309,
+		"name": "Step #10",
+		"paramId": 83,
+		"globalParamId": 9,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 310,
+		"name": "Step #11",
+		"paramId": 83,
+		"globalParamId": 10,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 311,
+		"name": "Step #12",
+		"paramId": 83,
+		"globalParamId": 11,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 312,
+		"name": "Step #13",
+		"paramId": 83,
+		"globalParamId": 12,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 313,
+		"name": "Step #14",
+		"paramId": 83,
+		"globalParamId": 13,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 314,
+		"name": "Step #15",
+		"paramId": 83,
+		"globalParamId": 14,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 315,
+		"name": "Step #16",
+		"paramId": 83,
+		"globalParamId": 15,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }]
+	},
+
+	{
+		"id": 7,
+		"name": "Channel",
+		"paramId": 2,
+		"type": "CHANNEL",
+		"list": [{ "str": "Global", "val": 65 }],
+		"conditions": [{"paramId" : 1,
+								    "values" : [1, 4, 8, 9, 11, 12, 14]
+								  }]
+	},
+
+	{
+		"id": 8,
+		"name": "CC Number",
+		"paramId": 3,
+		"type": "CC_NUM",
+		"conditions": [{"paramId" : 1,
+								    "values" : [1, 8]
+								  }]
+	},
+
+	{
+		"id": 9,
+		"name": "Min Value",
+		"paramId": 4,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [
+			{"paramId": 1, "values" : [1]},
+			{"paramId": 6, "values": [0]}]
+	},
+
+	{
+		"id": 10,
+		"name": "Max Value",
+		"paramId": 5,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [
+			{"paramId": 1, "values" : [1]},
+			{"paramId": 6, "values": [0]}]
+	},
+
+	{
+		"id": 11,
+		"name": "Mode",
+		"paramId": 1,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "Control", "val": 1 }, { "str": "NRPN/RPN", "val": 4 }]
+	},
+
+	{
+		"id": 12,
+		"name": "Mode",
+		"paramId": 1,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "MMC", "val": 7 },
+						 { "str": "Switched Control", "val": 8 }, { "str": "MIDI Note", "val": 9 },
+						 { "str": "Patch Change", "val": 11 }]
+	},
+
+	{
+		"id": 13,
+		"name": "Mode",
+		"paramId": 1,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "Control", "val": 1 },
+		         { "str": "NRPN/RPN", "val": 4 }, { "str" : "Aftertouch", "val": 14}]
+	},
+
+	{
+		"id": 14,
+		"name": "Mode",
+		"paramId": 1,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "Pitch Bend", "val": 12 }]
+	},
+
+	{
+		"id": 20,
+		"name": "Option",
+		"paramId": 6,
+		"type": "LIST",
+		"list": [{ "str": "Absolute", "val": 0 }, { "str": "Relative #1", "val": 1 },
+						 { "str": "Relative #2", "val": 2 }, { "str": "Relative #3", "val": 3 }],
+		"conditions": [{"paramId" : 1,
+								    "values" : [1]
+								  }]
+	},
+
+	{
+		"id": 21,
+		"name": "Option",
+		"paramId": 6,
+		"type": "LIST",
+		"list": [{ "str": "NRPN", "val": 0 }, { "str": "RPN", "val": 1 }],
+		"conditions": [{"paramId" : 1,
+								    "values" : [4]
+								  }]
+	},
+
+	{
+		"id": 22,
+		"name": "Option",
+		"paramId": 6,
+		"type": "LIST",
+		"list": [{ "str": "Toggle", "val": 0 }, { "str": "Gate", "val": 1 }],
+		"conditions": [{"paramId" : 1,
+								    "values" : [8,9]
+								  }]
+	},
+
+	{
+		"id": 25,
+		"name": "Data Entry",
+		"paramId": 3,
+		"type": "LIST",
+		"list": [{ "str": "Coarse", "val": 6 }, { "str": "Fine", "val": 38 }],
+		"conditions": [{"paramId" : 1,
+								    "values" : [4]
+								  }]
+	},
+
+	{
+		"id": 26,
+		"name": "MMC",
+		"paramId": 3,
+		"type": "MMC",
+		"conditions": [{"paramId" : 1,
+								    "values" : [7]
+								  }]
+	},
+
+	{
+		"id": 27,
+		"name": "Off Value",
+		"paramId": 4,
+		"type": "RANGE",
+		"minValue":0,
+		"maxValue":127,
+		"conditions": [{"paramId" : 1,
+								    "values" : [8]
+								  }]
+	},
+
+	{
+		"id": 28,
+		"name": "On Value",
+		"paramId": 5,
+		"type": "RANGE",
+		"minValue":0,
+		"maxValue":127,
+		"conditions": [{"paramId" : 1,
+								    "values" : [8]
+								  }]
+	},
+
+	{
+		"id": 29,
+		"name": "Note",
+		"paramId": 3,
+		"type": "NOTE",
+		"conditions": [{"paramId" : 1,
+								    "values" : [9]
+								  }]
+	},
+
+	{
+		"id": 32,
+		"name": "Program Number",
+		"paramId": 3,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1,
+								    "values" : [11]
+								  }]
+	},
+
+	{
+		"id": 33,
+		"name": "Bank LSB",
+		"paramId": 4,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1,
+								    "values" : [4,11]
+								  }]
+	},
+
+	{
+		"id": 34,
+		"name": "Bank MSB",
+		"paramId": 5,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1,
+								    "values" : [4,11]
+								  }]
+	}
+	],
+
+	"globalFields": [
+	{
+		"group": "",
+		"fields": [1, 112]
+	},
+	{
+		"group": "Controller",
+		"fields": [3, 5]
+	},
+	{
+		"group": "Performance Data",
+		"fields": [101, 102, 104, 109, 103, 107, 108]
+	},
+	{
+		"group": "Sequence Data",
+		"fields": [105, 106]
+	},
+	{
+		"group": "DONT_SHOW_IN_PANEL",
+		"fields": [110, 111]
+	},
+	{
+		"group": "DONT_SHOW_IN_PANEL",
+		"fields": [200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215]
+	},
+	{
+		"group": "DONT_SHOW_IN_PANEL",
+		"fields": [300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315]
+	}
+	],
+	
+	"itemTypes": [
+	{
+		"id": "knob",
+		"fields": [11, 20, 21, 7, 8, 9, 10, 25, 33, 34],
+		"copy-txt":"Copy value to other knobs"
+	},
+
+	{
+		"id": "pad",
+		"fields": [12, 22, 7, 26, 8, 27, 28, 29, 32, 33, 34, 9, 10],
+		"copy-txt":"Copy value to other pads"
+	},
+
+	{
+		"id": "transport_button",
+		"fields": [12, 7, 8, 9, 10, 21, 22, 25, 26, 27, 28, 29, 32, 33, 34]
+	}, {
+		"id": "undefined",
+		"fields": []
+	}
+	],
+
+	"controls": [
+	{
+		"id": "knob1",
+		"items": [
+		{
+			"id": 32,
+			"name": "Knob 1",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob2",
+		"items": [
+		{
+			"id": 33,
+			"name": "Knob 2",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob3",
+		"items": [
+		{
+			"id": 34,
+			"name": "Knob 3",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob4",
+		"items": [
+		{
+			"id": 35,
+			"name": "Knob 4",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob5",
+		"items": [
+		{
+			"id": 36,
+			"name": "Knob 5",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob6",
+		"items": [
+		{
+			"id": 37,
+			"name": "Knob 6",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob7",
+		"items": [
+		{
+			"id": 38,
+			"name": "Knob 7",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob8",
+		"items": [
+		{
+			"id": 39,
+			"name": "Knob 8",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob9",
+		"items": [
+		{
+			"id": 40,
+			"name": "Knob 9",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob10",
+		"items": [
+		{
+			"id": 41,
+			"name": "Knob 10",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob11",
+		"items": [
+		{
+			"id": 42,
+			"name": "Knob 11",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob12",
+		"items": [
+		{
+			"id": 43,
+			"name": "Knob 12",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob13",
+		"items": [
+		{
+			"id": 44,
+			"name": "Knob 13",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob14",
+		"items": [
+		{
+			"id": 45,
+			"name": "Knob 14",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob15",
+		"items": [
+		{
+			"id": 46,
+			"name": "Knob 15",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob16",
+		"items": [
+		{
+			"id": 47,
+			"name": "Knob 16",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "knob17",
+		"items": [
+		{
+			"id": 48,
+			"name": "Knob 17",
+			"type": "knob"
+		}]
+	},
+
+	{
+		"id": "btnPlay",
+		"items": [
+		{
+			"id": 88,
+			"name": "Play",
+			"type": "transport_button"
+		}]
+	},
+
+	{
+		"id": "btnStop",
+		"items": [
+		{
+			"id": 89,
+			"name": "Stop",
+			"type": "transport_button"
+		}]
+	},
+
+	{
+		"id": "pad1",
+		"items": [
+		{
+			"id": 112,
+			"name": "Pad 1",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad2",
+		"items": [
+		{
+			"id": 113,
+			"name": "Pad 2",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad3",
+		"items": [
+		{
+			"id": 114,
+			"name": "Pad 3",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad4",
+		"items": [
+		{
+			"id": 115,
+			"name": "Pad 4",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad5",
+		"items": [
+		{
+			"id": 116,
+			"name": "Pad 5",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad6",
+		"items": [
+		{
+			"id": 117,
+			"name": "Pad 6",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad7",
+		"items": [
+		{
+			"id": 118,
+			"name": "Pad 7",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad8",
+		"items": [
+		{
+			"id": 119,
+			"name": "Pad 8",
+			"type": "pad"
+		}]
+	},
+	
+	{
+		"id": "pad9",
+		"items": [
+		{
+			"id": 120,
+			"name": "Pad 9",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad10",
+		"items": [
+		{
+			"id": 121,
+			"name": "Pad 10",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad11",
+		"items": [
+		{
+			"id": 122,
+			"name": "Pad 11",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad12",
+		"items": [
+		{
+			"id": 123,
+			"name": "Pad 12",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad13",
+		"items": [
+		{
+			"id": 124,
+			"name": "Pad 13",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad14",
+		"items": [
+		{
+			"id": 125,
+			"name": "Pad 14",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad15",
+		"items": [
+		{
+			"id": 126,
+			"name": "Pad 15",
+			"type": "pad"
+		}]
+	},
+
+	{
+		"id": "pad16",
+		"items": [
+		{
+			"id": 127,
+			"name": "Pad 16",
+			"type": "pad"
+		}]
+	},
+
+
+	{
+		"id": "btnCtrlSeq",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 130,
+			"name": "btnCtrlSeq",
+			"type": "undefined"
+		}]
+	},
+	{
+		"id": "btnExtSync",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 131,
+			"name": "btnExtSync",
+			"type": "undefined"
+		}]
+	},
+	{
+		"id": "btnRecall",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 132,
+			"name": "btnRecall",
+			"type": "undefined"
+		}]
+	},
+	{
+		"id": "btnStore",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 133,
+			"name": "btnStore",
+			"type": "undefined"
+		}]
+	},
+	{
+		"id": "btnShift",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 134,
+			"name": "btnShift",
+			"type": "undefined"
+		}]
+	},
+	{
+		"id": "btnChannel",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 135,
+			"name": "btnChannel",
+			"type": "undefined"
+		}]
+	},]
+
+}

@@ -1,0 +1,1447 @@
+{
+	"name": "KeyStep 37",
+	"usbVendorId": 7285,
+	"manufacturerId": "00206B",
+	"familyId": "0200",
+	"productId": "42",
+	"projectId": 41,
+
+	"alternatives":
+	[{
+	    "usbProductId": 537,
+		"familyMemberId": "0800",
+	    "sku": "keystep37",
+	    "firmwareUpdater":
+	    {
+	    	"name": "midiplus",
+	    	"updaterUsbVendorId": 7285,
+	    	"updaterUsbProductId": 657,
+	    	"firmwareFilePattern": "*.led",
+	    	"userRebootMessage": "Please unplug the device, then plug it in again.",
+	    	"extraParameters":
+	    	{
+	    		"productCode": 63,
+	    		"productKey": [90, 87, 110, 40, 60, 78, 81]
+	    	}
+	    }
+	}],
+
+	"startOnTab": 2,
+
+	"imagePath": "KeyStep37.png",
+    "templateExtension": ".keystep37",
+    "memories": 0,
+    "is_working_memory":1,
+	"memory_typename": "Project",
+    "memories_title": "DEVICE PROJECTS",
+	"templates_title": "PROJECT BROWSER",
+	"protocol": "arturia_v2",
+	"actions": ["store", "recall", "sync"],
+	"firmwareFormat": "$3.$2.$1",	
+	"minimalVersionRequired": "1.0.0.5",
+
+	"deviceGlobalParametersId":65,
+	"bulkSetSupported":1,
+	"bulkOperation": [
+	{
+		"multibulk_desc" : "All SEQ Global Parameters",
+		"multibulk_idx" : [1, 8],
+		"multibulk" : [
+			{
+				"desc": "all SEQ1 - PATTERN IDX parameters",
+				"bulkParamIds": [96, 97, 98],
+				"bulkItemId": [[22], "IDX", 1]
+			}, {
+				"desc": "steps 1-32 SEQ1 - PATTERN IDX parameters",
+				"bulkParamIds": [99],
+				"bulkItemId": [[22], ["IDX"], 1, 32]
+			}, {
+				"desc": "steps 33-64 SEQ1 - PATTERN IDX parameters",
+				"bulkParamIds": [99],
+				"bulkItemId": [[22], ["IDX"], 33, 32]
+			}
+		]
+	},
+	{
+		"multibulk_desc" : "All SEQ Parameters",
+		"multibulk_idx" : [1, 64],
+		"multibulk" : [
+			{
+				"desc": "all steps SEQ1 - PATTERN IDX parameters",
+				"bulkParamIds": [101, 102],
+				"bulkItemId": [[22], [1,2,3,4,5,6,7,8], ["IDX"], 1, 8]
+			}
+		]
+	},
+
+	],
+
+	"fields": [
+	{
+		"id": 501,
+		"name": "MIDI Input Channel",
+		"paramId": 65,
+		"globalParamId": 1,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	}, {
+		"id": 502,
+		"name": "MIDI Thru",
+		"paramId": 65,
+		"globalParamId": 2,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"defaultValue": 0
+	}, {
+		"id": 623,
+		"name": "User Channel",
+		"paramId": 65,
+		"globalParamId": 3,
+		"type": "CHANNEL",
+		"defaultValue": 65
+	},{
+		"id": 624,
+		"name": "Velocity curve",
+		"paramId": 65,
+		"globalParamId": 6,
+		"type": "LIST",
+		"list": [{ "str": "Log", "val": 1 },{ "str": "Lin", "val": 0 },{ "str": "AntiLog", "val": 2 }],
+		"defaultValue": 0
+	},{
+		"id": 625,
+		"name": "Aftertouch curve",
+		"paramId": 65,
+		"globalParamId": 7,
+		"type": "LIST",
+		"list": [{ "str": "Log", "val": 1 },{ "str": "Lin", "val": 0 },{ "str": "AntiLog", "val": 2 },{ "str": "Soft", "val": 3 }],
+		"defaultValue": 0
+	},
+
+	{
+		"id": 510,
+		"name": "Sync Clock In/Out Settings",
+		"paramId": 65,
+		"globalParamId": 8,
+		"type": "LIST",
+		"list": [{ "str": "1step (Gate)", "val": 0 },{ "str": "1step (Clock)", "val": 1 }, { "str": "1pulse (Korg)", "val": 2 }, { "str": "24ppq", "val": 3 }, { "str": "48ppq", "val": 4 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 511,
+		"name": "Tempo knob mode",
+		"paramId": 65,
+		"globalParamId": 16,
+		"type": "LIST",
+		"list": [{ "str": "Jump", "val": 0 }, { "str": "Pickup", "val": 1 }],
+		"defaultValue": 1
+	},
+	{
+		"id": 512,
+		"name": "Tap Tempo average",
+		"paramId": 65,
+		"globalParamId": 10,
+		"type": "LIST",
+		"list": [{ "str": "3", "val": 3 }, { "str": "4", "val": 4 }, { "str": "5", "val": 5 }, { "str": "6", "val": 6 }],
+		"defaultValue": 3
+	},
+	{
+		"id": 513,
+		"name": "Sync Clock Start",
+		"paramId": 65,
+		"globalParamId": 11,
+		"type": "LIST",
+		"list": [{ "str": "On Clock", "val": 0 }, { "str": "On Gate Start", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 514,
+		"name": "Next Seq",
+		"paramId": 65,
+		"globalParamId": 12,
+		"type": "LIST",
+		"list": [{ "str": "End", "val": 0 }, { "str": "Instant Reset", "val": 1 }, { "str": "Instant Continue", "val": 2 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 516,
+		"name": "Transposition Latch",
+		"paramId": 65,
+		"globalParamId": 14,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"defaultValue": 1
+	},
+	{
+		"id": 517,
+		"name": "Transposition Input Port",
+		"paramId": 65,
+		"globalParamId": 15,
+		"type": "LIST",
+		"list": [{ "str": "USB", "val": 1 }, { "str": "MIDI", "val": 2 }, { "str": "USB&MIDI", "val": 3 }],
+		"defaultValue": 3
+	},
+	{
+		"id": 518,
+		"name": "Transpose Input Channel",
+		"paramId": 65,
+		"globalParamId": 9,
+		"type": "CHANNEL",
+		"list": [{ "str": "None", "val": 16 }],
+		"defaultValue": 15
+	},
+	{
+		"id": 519,
+		"name": "Velocity",
+		"paramId": 65,
+		"globalParamId": 17,
+		"type": "LIST",
+		"list": [{ "str": "As recorded", "val": 0 }, { "str": "Fixed", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 520,
+		"name": "Fixed Velocity Value",
+		"paramId": 65,
+		"globalParamId": 18,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 1,
+		"maxValue": 127,
+		"defaultValue": 100
+	},
+	{
+		"id": 521,
+		"name": "Transpose Center Pitch",
+		"paramId": 65,
+		"globalParamId": 19,
+		"type": "NOTE",
+		"defaultValue": 60
+	},
+
+	{
+		"id": 522,
+		"name": "Arm to Start",
+		"paramId": 65,
+		"globalParamId": 21,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 523,
+		"name": "Tie Mode",
+		"paramId": 65,
+		"globalParamId": 22,
+		"type": "LIST",
+		"list": [{ "str": "Tie to Previous", "val": 0 }, { "str": "Tie to Next", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 525,
+		"name": "Sequence Length Update",
+		"paramId": 65,
+		"globalParamId": 23,
+		"type": "LIST",
+		"list": [{ "str": "Keep content beyond seq length", "val": 0 }, { "str": "Clear content beyond seq length", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 530,
+		"name": "PITCH CV Output",
+		"paramId": 65,
+		"globalParamId": 24,
+		"type": "LIST",
+		"list": [{ "str": "Volts per octave", "val": 0 }, { "str": "Hertz per volt", "val": 1 }],
+		"defaultValue": 0
+	}, {
+		"id": 531,
+		"name": "GATE CV Output",
+		"paramId": 65,
+		"globalParamId": 25,
+		"type": "LIST",
+		"list": [{ "str": "S-trig", "val": 0 }, { "str": "V-trig 5V", "val": 1 }, { "str": "V-trig 12V", "val": 2 }],
+		"defaultValue": 2
+	}, {
+		"id": 532,
+		"name": "0V MIDI Note",
+		"paramId": 65,
+		"globalParamId": 26,
+		"conditions": [{"paramId" : 24, "values" : [0]}],
+		"type": "NOTE",
+		"defaultValue": 0
+	},	{
+		"id": 533,
+		"name": "1V MIDI Note",
+		"paramId": 65,
+		"globalParamId": 27,
+		"conditions": [{"paramId" : 24, "values" : [1]}],
+		"type": "NOTE",
+		"defaultValue": 24
+	},	{
+		"id": 534,
+		"name": "Note Priority",
+		"paramId": 65,
+		"globalParamId": 28,
+		"type": "LIST",
+		"list": [{ "str": "Low", "val": 0 }, { "str": "High", "val": 1 }, { "str": "Last", "val": 2 }],
+		"defaultValue": 0
+	}, {
+		"id": 535,
+		"name": "MOD CV Source",
+		"paramId": 65,
+		"globalParamId": 29,
+		"type": "LIST",
+		"list": [{ "str": "Mod Wheel", "val": 0 }, { "str": "Velocity", "val": 1 }, { "str": "Aftertouch", "val": 2 }],
+		"defaultValue": 0
+	},  {
+		"id": 536,
+		"name": "MOD CV max voltage",
+		"paramId": 65,
+		"globalParamId": 30,
+		"type": "LIST",
+		"list": [{ "str": "5V", "val": 5 }, { "str": "6V", "val": 6 },{ "str": "7V", "val": 7 },{ "str": "8V", "val": 8 },{ "str": "9V", "val": 9 },{ "str": "10V", "val": 10 },{ "str": "11V", "val": 11 },{ "str": "12V", "val": 12 }],
+		"defaultValue": 5
+	},{
+		"id": 537,
+		"name": "Pitch Bend Range (Semi-tones)",
+		"paramId": 65,
+		"globalParamId": 31,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 1,
+		"maxValue": 24,
+		"defaultValue": 1
+	},
+
+	{
+		"id": 550,
+		"name": "Transport Mode",
+		"paramId": 65,
+		"globalParamId": 32,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "MIDI CC", "val": 1 }, { "str": "MMC", "val": 2 }, { "str": "Both", "val": 3 }],
+		"defaultValue": 3
+	},
+	{
+		"id": 551,
+		"name": "Stop Channel",
+		"paramId": 65,
+		"globalParamId": 33,
+		"conditions": [{"paramId" : 96, "values" : [1,3]}],
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 552,
+		"name": "Rec Channel",
+		"paramId": 65,
+		"globalParamId": 34,
+		"conditions": [{"paramId" : 96, "values" : [1,3]}],
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 553,
+		"name": "Play Channel",
+		"paramId": 65,
+		"globalParamId": 35,
+		"conditions": [{"paramId" : 96, "values" : [1,3]}],
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 554,
+		"name": "Stop CC",
+		"paramId": 65,
+		"globalParamId": 36,
+		"conditions": [{"paramId" : 96, "values" : [1,3]}],
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 51
+	},
+	{
+		"id": 555,
+		"name": "Rec CC",
+		"paramId": 65,
+		"globalParamId": 37,
+		"conditions": [{"paramId" : 96, "values" : [1,3]}],
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 50
+	},
+	{
+		"id": 556,
+		"name": "Play CC",
+		"paramId": 65,
+		"globalParamId": 38,
+		"conditions": [{"paramId" : 96, "values" : [1,3]}],
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 54
+	},
+	{
+		"id": 557,
+		"name": "Play/Pause",
+		"paramId": 65,
+		"globalParamId": 39,
+		"type": "LIST",
+		"list": [{ "str": "Pause", "val": 0 }, { "str": "Reset", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 558,
+		"name": "Knob Catchup",
+		"paramId": 65,
+		"globalParamId": 46,
+		"type": "LIST",
+		"list": [{ "str": "Jump", "val": 0 }, { "str": "Hook", "val": 1 }, { "str": "Scale", "val": 2 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 626,
+		"name": "Hold Switch Function",
+		"paramId": 65,
+		"globalParamId": 111,
+		"type": "LIST",
+		"list": [{ "str": "Hold Keys", "val": 1 },{ "str": "Sustain message", "val": 2 },{ "str": "Both", "val": 3 }],
+		"defaultValue": 1
+	}, {
+		"id": 627,
+		"name": "Sustain Pedal Function",
+		"paramId": 65,
+		"globalParamId": 112,
+		"type": "LIST",
+		"list": [{ "str": "Hold Keys", "val": 1 },{ "str": "Sustain message", "val": 2 },{ "str": "Both", "val": 3 }],
+		"defaultValue": 2
+	}, 
+	{
+		"id": 559,
+		"name": "Knob 1 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 47,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 560,
+		"name": "Knob 1 Min Range",
+		"paramId": 65,
+		"globalParamId": 48,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 561,
+		"name": "Knob 1 Max Range",
+		"paramId": 65,
+		"globalParamId": 49,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 562,
+		"name": "Knob 1 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 50,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 563,
+		"name": "Knob 2 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 51,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 564,
+		"name": "Knob 2 Min Range",
+		"paramId": 65,
+		"globalParamId": 52,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 565,
+		"name": "Knob 2 Max Range",
+		"paramId": 65,
+		"globalParamId": 53,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 566,
+		"name": "Knob 2 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 54,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 567,
+		"name": "Knob 3 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 55,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 568,
+		"name": "Knob 3 Min Range",
+		"paramId": 65,
+		"globalParamId": 56,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 569,
+		"name": "Knob 3 Max Range",
+		"paramId": 65,
+		"globalParamId": 57,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 570,
+		"name": "Knob 3 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 58,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 571,
+		"name": "Knob 4 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 59,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 572,
+		"name": "Knob 4 Min Range",
+		"paramId": 65,
+		"globalParamId": 60,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 573,
+		"name": "Knob 4 Max Range",
+		"paramId": 65,
+		"globalParamId": 61,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 574,
+		"name": "Knob 4 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 62,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 575,
+		"name": "Knob 1 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 63,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 576,
+		"name": "Knob 1 Min Range",
+		"paramId": 65,
+		"globalParamId": 64,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 577,
+		"name": "Knob 1 Max Range",
+		"paramId": 65,
+		"globalParamId": 65,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 578,
+		"name": "Knob 1 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 66,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 579,
+		"name": "Knob 2 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 67,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 580,
+		"name": "Knob 2 Min Range",
+		"paramId": 65,
+		"globalParamId": 68,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 581,
+		"name": "Knob 2 Max Range",
+		"paramId": 65,
+		"globalParamId": 69,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 582,
+		"name": "Knob 2 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 70,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 583,
+		"name": "Knob 3 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 71,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 584,
+		"name": "Knob 3 Min Range",
+		"paramId": 65,
+		"globalParamId": 72,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 585,
+		"name": "Knob 3 Max Range",
+		"paramId": 65,
+		"globalParamId": 73,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 586,
+		"name": "Knob 3 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 74,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 587,
+		"name": "Knob 4 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 75,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 588,
+		"name": "Knob 4 Min Range",
+		"paramId": 65,
+		"globalParamId": 76,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 589,
+		"name": "Knob 4 Max Range",
+		"paramId": 65,
+		"globalParamId": 77,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 590,
+		"name": "Knob 4 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 78,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 591,
+		"name": "Knob 1 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 79,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 592,
+		"name": "Knob 1 Min Range",
+		"paramId": 65,
+		"globalParamId": 80,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 593,
+		"name": "Knob 1 Max Range",
+		"paramId": 65,
+		"globalParamId": 81,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 594,
+		"name": "Knob 1 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 82,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 595,
+		"name": "Knob 2 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 83,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 596,
+		"name": "Knob 2 Min Range",
+		"paramId": 65,
+		"globalParamId": 84,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 597,
+		"name": "Knob 2 Max Range",
+		"paramId": 65,
+		"globalParamId": 85,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 598,
+		"name": "Knob 2 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 86,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 599,
+		"name": "Knob 3 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 87,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 600,
+		"name": "Knob 3 Min Range",
+		"paramId": 65,
+		"globalParamId": 88,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 601,
+		"name": "Knob 3 Max Range",
+		"paramId": 65,
+		"globalParamId": 89,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 602,
+		"name": "Knob 3 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 90,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 603,
+		"name": "Knob 4 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 91,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 604,
+		"name": "Knob 4 Min Range",
+		"paramId": 65,
+		"globalParamId": 92,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 605,
+		"name": "Knob 4 Max Range",
+		"paramId": 65,
+		"globalParamId": 93,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 606,
+		"name": "Knob 4 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 94,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 607,
+		"name": "Knob 1 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 95,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 608,
+		"name": "Knob 1 Min Range",
+		"paramId": 65,
+		"globalParamId": 96,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 609,
+		"name": "Knob 1 Max Range",
+		"paramId": 65,
+		"globalParamId": 97,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 610,
+		"name": "Knob 1 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 98,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 611,
+		"name": "Knob 2 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 99,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 612,
+		"name": "Knob 2 Min Range",
+		"paramId": 65,
+		"globalParamId": 100,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 613,
+		"name": "Knob 2 Max Range",
+		"paramId": 65,
+		"globalParamId": 101,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 614,
+		"name": "Knob 2 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 102,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 615,
+		"name": "Knob 3 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 103,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 616,
+		"name": "Knob 3 Min Range",
+		"paramId": 65,
+		"globalParamId": 104,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 617,
+		"name": "Knob 3 Max Range",
+		"paramId": 65,
+		"globalParamId": 105,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 618,
+		"name": "Knob 3 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 106,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+	{
+		"id": 619,
+		"name": "Knob 4 MIDI CC",
+		"paramId": 65,
+		"globalParamId": 107,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 620,
+		"name": "Knob 4 Min Range",
+		"paramId": 65,
+		"globalParamId": 108,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 621,
+		"name": "Knob 4 Max Range",
+		"paramId": 65,
+		"globalParamId": 109,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 0
+	},
+	{
+		"id": 622,
+		"name": "Knob 4 MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 110,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 65
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	{
+		"id": 60,
+		"name": "SEQ Length",
+		"paramId": 96,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 1,
+		"maxValue": 64,
+		"syncedAlone": 1,
+		"defaultValue": 16
+	}, 	{
+		"id": 61,
+		"name": "SEQ Swing(%)",
+		"paramId": 97,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 50,
+		"maxValue": 75,
+		"syncedAlone": 1,
+		"defaultValue": 50
+	},
+	{
+		"id": 62,
+		"name": "SEQ Gate Length",
+		"paramId": 98,
+		"type": "LIST",
+		"list": [{ "str": "10%", "val": 10 }, { "str": "25%", "val": 25 }, { "str": "50%", "val": 50 }, { "str": "75%", "val": 75 }, { "str": "90%", "val": 90 }],
+		"syncedAlone": 1,
+		"defaultValue": 50
+	},
+
+
+
+	{
+		"id": 80,
+		"name": "Step TIE",
+		"paramId": 99,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"syncedAlone": 1,
+		"defaultValue": 0
+	}, {
+		"id": 82,
+		"name": "Note Velocity",
+		"paramId": 101,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"syncedAlone": 1,
+		"defaultValue": 0
+	}, {
+		"id": 83,
+		"name": "Note Pitch",
+		"paramId": 102,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"syncedAlone": 1,
+		"defaultValue": 100
+	}
+
+
+	],
+
+	"globalFields-show-only-when-connected" : 1,
+	"globalFields": [
+	{
+		"group": "MIDI Controller Settings",
+		"fields": [623,501,502,624,625,558,626,627],
+	},
+	{
+		"group": "Sequence Settings",
+		"fields": [510,513,514,517,518,516,521,519,520,512,522,523,525],
+	},
+	{
+		"group": "CV/Gate settings",
+		"fields": [530,532,533,534,535,536,537,531],
+	},
+	{
+		"group": "Transport settings",
+		"fields": [557,550],
+	},
+	{
+		"group": "",
+		"fields": [551,552,553,554,555,556],
+	},
+	{
+		"group": "CC Bank 1",
+		"fields": [559,560,561,562],
+	},
+	{
+		"group": "",
+		"fields": [563,564,565,566],
+	},
+	{
+		"group": "",
+		"fields": [567,568,569,570],
+	},
+	{
+		"group": "",
+		"fields": [571,572,573,574],
+	},
+	{
+		"group": "CC Bank 2",
+		"fields": [575,576,577,578],
+	},
+	{
+		"group": "",
+		"fields": [579,580,581,582],
+	},
+	{
+		"group": "",
+		"fields": [583,584,585,586],
+	},
+	{
+		"group": "",
+		"fields": [587,588,589,590],
+	},
+	{
+		"group": "CC Bank 3",
+		"fields": [591,592,593,594],
+	},
+	{
+		"group": "",
+		"fields": [595,596,597,598],
+	},
+	{
+		"group": "",
+		"fields": [599,600,601,602],
+	},
+	{
+		"group": "",
+		"fields": [603,604,605,606],
+	},
+	{
+		"group": "CC Bank 4",
+		"fields": [607,608,609,610],
+	},
+	{
+		"group": "",
+		"fields": [611,612,613,614],
+	},
+	{
+		"group": "",
+		"fields": [615,616,617,618],
+	},
+	{
+		"group": "",
+		"fields": [619,620,621,622],
+	}
+	],
+
+
+	"itemTypes": [
+
+	{
+		"id": "seq",
+		"fields": []
+	},
+	{
+		"id": "seq-idX",
+		"fields": [60,61,62]
+	},
+	{
+		"id": "seq-idX-stepS",
+		"fields": [80]
+	},
+	{
+		"id": "seq-idX-stepS-NoteN",
+		"fields": [82, 83]
+	},
+	{
+		"id": "undefined",
+		"fields": []
+	}
+	],
+
+
+
+	"controls": [
+
+	{
+		"tab_name":"Seq",
+		"displayed_on_test_only": 1,
+		"id": "Sequencer",
+		"items": [
+		{
+			"id": 22,
+			"name": "Seq",
+			"type": "seq",
+			"subitems": [{
+				"id": [1, 8, "SEQ_IDX"],
+				"name":"SEQ_IDX",
+				"type":"seq-idX",
+				"subitems_display_type":"KS_PIANO_ROLL",
+				"subitems": [{
+					"id" : [1, 64, "STEP_IDX"],
+					"name": "STEP_IDX",
+					"type": "seq-idX-stepS",
+					"hiddenInTreeView":1,
+					"subitems": [{
+						"id" : [1, 8, "NOTE_IDX"],
+						"name": "NOTE_IDX",
+						"type": "seq-idX-stepS-NoteN",
+						"hiddenInTreeView":1
+					}]
+				}],
+				"associated_fields_id": [60, 62]
+			}]
+		}]
+	},
+
+
+	{
+		"id": "tap",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 103,
+			"name": "Tap",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "record",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 87,
+			"name": "Record",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "btnStop",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 89,
+			"name": "Stop",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "btnPlay",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 90,
+			"name": "Play",
+			"type": "undefined"
+		}]
+	},
+
+	{
+		"id": "hold",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 85,
+			"name": "hold",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "shift",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 86,
+			"name": "shift",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "octm",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 16,
+			"name": "octm",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "octp",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 17,
+			"name": "octp",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "chord",
+		"displayed_on_test_only": 1,
+	},
+
+	{
+		"id": "dcin",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 96,
+			"name": "dcin",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "seqarp",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 18,
+			"name": "seqarp",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "syncdip",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 19,
+			"name": "syncdip",
+			"type": "undefined"
+		}]
+	},
+
+	{
+		"id": "pitchwheel",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 65,
+			"name": "pitchwheel",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "modwheel",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 64,
+			"name": "modwheel",
+			"type": "undefined"
+		}]
+	},
+
+
+
+
+
+	{
+		"id": "knobTimeDiv",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 104,
+			"name": "TimeDiv",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "knobRate",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 102,
+			"name": "Rate",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "knobSeq",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 21,
+			"name": "Sequence",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "knob1",
+		"displayed_on_test_only": 1
+	}, {
+		"id": "knob2",
+		"displayed_on_test_only": 1
+	}, {
+		"id": "knob3",
+		"displayed_on_test_only": 1
+	}, {
+		"id": "knob4",
+		"displayed_on_test_only": 1
+	}
+
+	]
+}

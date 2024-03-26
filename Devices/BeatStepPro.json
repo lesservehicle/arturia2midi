@@ -1,0 +1,2764 @@
+{
+	"name": "BeatStepPro",
+	"usbVendorId": 7285,
+	"manufacturerId": "00206B",
+	"familyId": "0200",
+	"productId": "42",
+	"projectId": 22,
+	
+	"alternatives":
+	[{
+	    "usbProductId": 647,
+		"familyMemberId": "0700",
+	    "sku": "beatstep-pro",
+	    "firmwareUpdater":
+	    {
+	    	"name": "midiplus",
+	    	"updaterUsbVendorId": 7285,
+	    	"updaterUsbProductId": 519,
+	    	"firmwareFilePattern": "*.led",
+	    	"userRebootMessage": "Please turn your device OFF then ON.",
+	    	"extraParameters":
+	    	{
+	    		"productCode": 62,
+	    		"productKey": [90, 87, 110, 40, 60, 78, 62]
+	    	}
+	    }
+	}],
+
+	"imagePath": "BeatStepPro.png",
+    "templateExtension": ".beatsteppro",
+    "memories": 16,
+    "is_working_memory":0,
+	"memory_typename": "Project",
+    "memories_title": "DEVICE PROJECTS",
+	"templates_name": "Project",
+	"templates_title": "PROJECT BROWSER",
+	"protocol": "arturia_v2",
+	"actions": ["store", "recall"],
+	"firmwareFormat": "$3.$2.$1",
+	"minimalVersionRequired": "1.2.0.6",
+
+	"deviceGlobalParametersId":65,
+	"bulkSetSupported":1,
+	"bulkForDragAndDropSupported":1,
+	"bulkOperation": [
+	{
+		"desc": "all global parameters on format <paramID> N*<item, value>",
+		"bulkParamIds": [1,2,3,4,5,6,7,8],
+		"bulkItemId": 0
+	}, {
+		"desc": "all projects parameters (swing, random, proba, tempo Min-Mid-Max) with the project item ID 5A",
+		"bulkParamIds": [100, 102, 103, 109, 110, 111],
+		"bulkItemId": 90
+	},
+
+	{
+		"multibulk_desc" : "All SEQ1 Parameters",
+		"multibulk_idx" : [1, 16],
+		"multibulk" : [
+			{
+				"desc": "all SEQ1 - PATTERN IDX parameters",
+				"bulkParamIds": [96, 97, 98, 99, 100, 102, 103, 101, 81],
+				"bulkItemId": [[16], "IDX", 1]
+			}, {
+				"desc": "steps 1-32 SEQ1 - PATTERN IDX parameters parameters",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[16], ["IDX"], 1, 16]
+			}, {
+				"desc": "steps 33-64 SEQ1 - done in 2 bulks as FW does not support larger bulk",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[16], ["IDX"], 17, 16]
+			}, {
+				"desc": "steps 1-32 SEQ1 - PATTERN IDX parameters parameters",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[16], ["IDX"], 33, 16]
+			}, {
+				"desc": "steps 33-64 SEQ1 - done in 2 bulks as FW does not support larger bulk",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[16], ["IDX"], 49, 16]
+			}
+		]
+	},
+	{
+		"multibulk_desc" : "All SEQ2 Parameters",
+		"multibulk_idx" : [1, 16],
+		"multibulk" : [
+			{
+				"desc": "all SEQ2 - PATTERN IDX parameters",
+				"bulkParamIds": [96, 97, 98, 99, 100, 102, 103, 101, 81],
+				"bulkItemId": [[21], "IDX", 1]
+			}, {
+				"desc": "steps 1-32 SEQ2 - PATTERN IDX parameters parameters",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[21], ["IDX"], 1, 16]
+			}, {
+				"desc": "steps 33-64 SEQ2 - done in 2 bulks as FW does not support larger bulk",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[21], ["IDX"], 17, 16]
+			}, {
+				"desc": "steps 1-32 SEQ2 - PATTERN IDX parameters parameters",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[21], ["IDX"], 33, 16]
+			}, {
+				"desc": "steps 33-64 SEQ2 - done in 2 bulks as FW does not support larger bulk",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[21], ["IDX"], 49, 16]
+			}
+		]
+	},
+	{
+		"multibulk_desc" : "All DRUM Parameters",
+		"multibulk_idx" : [1, 16],
+		"multibulk" : [
+			{
+				"desc": "all DRUM - PATTERN IDX parameters",
+				"bulkParamIds": [97, 98, 99, 100, 102, 103, 101, 80],
+				"bulkItemId": [[26], "IDX", 1]
+			}, {
+        		"desc": "tracks - PATTERN IDX parameters - 8 only for FW reason",
+        		"bulkParamIds": [99],
+        		"bulkItemId": [[26], ["IDX"], 1, 8]
+      		}, {
+        		"desc": "tracks - PATTERN IDX parameters - 8 only for FW reason",
+        		"bulkParamIds": [99],
+        		"bulkItemId": [[26], ["IDX"], 9, 8]
+      		}, {
+				"desc": "steps 1-16 SEQ2 - PATTERN IDX parameters parameters",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[26], ["IDX"], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], 1, 16]
+			}, {
+				"desc": "steps 17-32 DRUM - done in 4 bulks as FW does not support larger bulk",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[26], ["IDX"], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], 17, 16]
+			}, {
+				"desc": "steps 33-48 DRUM - done in 4 bulks as FW does not support larger bulk",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[26], ["IDX"], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], 33, 16]
+			}, {
+				"desc": "steps 49-64 DRUM - done in 4 bulks as FW does not support larger bulk",
+				"bulkParamIds": [104, 105, 106, 107],
+				"bulkItemId": [[26], ["IDX"], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], 49, 16]
+			}
+		]
+	},{
+		"multibulk_desc" : "All SCENES Parameters",
+		"multibulk_idx" : [1, 16],
+		"multibulk" : [
+			{
+				"desc": "16 SCENES - 3 SONGS - 16 patterns on one project",
+				"bulkParamIds": [82],
+				"bulkItemId": [[68], ["IDX"], [1,2,3], 1, 16]
+			},
+		]
+	}
+
+	],
+
+	"fields": [
+	{
+		"id": 500,
+		"name": "MCU/HUI",
+		"paramId": 65,
+		"globalParamId": 12,
+		"type": "LIST",
+		"list": [{ "str": "MCU", "val": 0 }, { "str": "HUI", "val": 1 }],
+		"defaultValue": 1
+	},{
+		"id": 501,
+		"name": "User Channel",
+		"paramId": 65,
+		"globalParamId": 6,
+		"type": "CHANNEL",
+		"defaultValue": 0
+	},
+	{
+		"id": 502,
+		"name": "Seq1 Send MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 64,
+		"type": "CHANNEL",
+		"defaultValue": 0
+	},
+	{
+		"id": 503,
+		"name": "Seq1 Rcv MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 65,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }, { "str": "All", "val": 126 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 504,
+		"name": "Seq2 Send MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 66,
+		"type": "CHANNEL",
+		"defaultValue": 1
+	},
+	{
+		"id": 505,
+		"name": "Seq2 Rcv MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 67,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }, { "str": "All", "val": 126 }],
+		"defaultValue": 1
+	},
+	{
+		"id": 506,
+		"name": "Drum Send MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 68,
+		"type": "CHANNEL",
+		"defaultValue": 9
+	},
+	{
+		"id": 507,
+		"name": "Drum Rcv MIDI Channel",
+		"paramId": 65,
+		"globalParamId": 69,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }, { "str": "All", "val": 126 }],
+		"defaultValue": 9
+	},
+
+
+
+	{
+		"id": 510,
+		"name": "Transposition Latch",
+		"paramId": 65,
+		"globalParamId": 7,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"defaultValue": 1
+	},
+	{
+		"id": 511,
+		"name": "Seq Trans. Input channel",
+		"paramId": 65,
+		"globalParamId": 8,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }, { "str": "All", "val": 126 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 512,
+		"name": "Seq Trans. Input port",
+		"paramId": 65,
+		"globalParamId": 9,
+		"type": "LIST",
+		"list": [{ "str": "USB", "val": 1 }, { "str": "MIDI", "val": 2 }, { "str": "USB&MIDI", "val": 3 }],
+		"defaultValue": 3
+	},
+	{
+		"id": 513,
+		"name": "Seq Trans. Center Pitch",
+		"paramId": 65,
+		"globalParamId": 10,
+		"type": "NOTE",
+		"defaultValue": 60
+	},
+	{
+		"id": 514,
+		"name": "Pattern Link",
+		"paramId": 65,
+		"globalParamId": 11,
+		"type": "LIST",
+		"list": [{ "str": "Absolute", "val": 0 }, { "str": "Relative", "val": 1 }],
+		"defaultValue": 0
+	},
+
+	{
+		"id": 515,
+		"name": "Seq1 Pitch",
+		"paramId": 65,
+		"globalParamId": 70,
+		"type": "LIST",
+		"list": [{ "str": "V/Oct", "val": 0 }, { "str": "Hz/Volt", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 516,
+		"name": "Seq2 Pitch",
+		"paramId": 65,
+		"globalParamId": 72,
+		"type": "LIST",
+		"list": [{ "str": "V/Oct", "val": 0 }, { "str": "Hz/Volt", "val": 1 }],
+		"defaultValue": 0
+	},{
+		"id": 517,
+		"name": "Seq1 Gate",
+		"paramId": 65,
+		"globalParamId": 71,
+		"type": "LIST",
+		"list": [{ "str": "V-trig", "val": 0 }, { "str": "S-trig", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 518,
+		"name": "Seq2 Gate",
+		"paramId": 65,
+		"globalParamId": 73,
+		"type": "LIST",
+		"list": [{ "str": "V-trig", "val": 0 }, { "str": "S-trig", "val": 1 }],
+		"defaultValue": 0
+	},
+
+	{
+		"id": 570,
+		"name": "Seq1 0V MIDI Note",
+		"paramId": 65,
+		"globalParamId": 74,
+		"conditions": [{"paramId" : 70, "values" : [0]}],
+		"type": "NOTE",
+		"defaultValue": 24
+	},	{
+		"id": 571,
+		"name": "Seq2 0V MIDI Note",
+		"paramId": 65,
+		"globalParamId": 75,
+		"conditions": [{"paramId" : 72, "values" : [0]}],
+		"type": "NOTE",
+		"defaultValue": 24
+	},{
+		"id": 572,
+		"name": "Seq1 1V MIDI Note",
+		"paramId": 65,
+		"globalParamId": 76,
+		"conditions": [{"paramId" : 70, "values" : [1]}],
+		"type": "NOTE",
+		"defaultValue": 33
+	},	{
+		"id": 573,
+		"name": "Seq2 1V MIDI Note",
+		"paramId": 65,
+		"globalParamId": 77,
+		"conditions": [{"paramId" : 72, "values" : [1]}],
+		"type": "NOTE",
+		"defaultValue": 33
+	},
+
+	{
+	    "id": 580,
+	    "name": "Mode",
+	    "paramId": 65,
+	    "globalParamId": 23,
+	    "type": "LIST",
+	    "list": [{ "str": "Looper", "val": 0 }, { "str": "Roller", "val": 1 }],
+	    "defaultValue": 0
+	},   {
+		"id": 581,
+		"name": "MIDI Send/Receive",
+		"paramId": 65,
+		"globalParamId": 41,
+		"type": "LIST",
+		"list": [{ "str": "No", "val": 0 }, { "str": "Yes", "val": 1 }],
+		"defaultValue": 0
+	},  {
+		"id": 582,
+		"name": "MIDI CC",
+		"paramId": 65,
+		"globalParamId": 40,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 9
+	},  
+
+
+	{
+		"id": 520,
+		"name": "User Knob Acceleration",
+		"paramId": 65,
+		"globalParamId": 4,
+		"type": "LIST",
+		"list": [{ "str": "Slow (Off)", "val": 0 }, { "str": "Medium", "val": 1 }, { "str": "Fast", "val": 2 }, { "str": "Fast2", "val": 3 }],
+		"defaultValue": 3
+	},
+	{
+		"id": 523,
+		"name": "Pad Poly Aftertouch",
+		"paramId": 65,
+		"globalParamId": 2,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"defaultValue": 1
+	},
+    {
+	    "id": 525,
+	    "name": "Scene Mode",
+	    "paramId": 65,
+	    "globalParamId": 13,
+	    "type": "LIST",
+	    "list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+	    "defaultValue": 0
+    },  
+	{
+		"id": 526,
+		"name": "Seq1 Velocity Scaling",
+		"paramId": 65,
+		"globalParamId": 78,
+		"type": "LIST",
+		"list": [
+			{ "str": "1",  "val": 0 },
+			{ "str": "2",  "val": 1 },
+			{ "str": "3",  "val": 2 },
+			{ "str": "4",  "val": 3 },
+			{ "str": "5",  "val": 4 },
+			{ "str": "6",  "val": 5 },
+			{ "str": "7",  "val": 6 },
+			{ "str": "8",  "val": 7 },
+			{ "str": "9",  "val": 8 },
+			{ "str": "10", "val": 9 },],
+		"defaultValue": 1
+	},	{
+		"id": 527,
+		"name": "Seq2 Velocity Scaling",
+		"paramId": 65,
+		"globalParamId": 79,
+		"type": "LIST",
+		"list": [
+			{ "str": "1",  "val": 0 },
+			{ "str": "2",  "val": 1 },
+			{ "str": "3",  "val": 2 },
+			{ "str": "4",  "val": 3 },
+			{ "str": "5",  "val": 4 },
+			{ "str": "6",  "val": 5 },
+			{ "str": "7",  "val": 6 },
+			{ "str": "8",  "val": 7 },
+			{ "str": "9",  "val": 8 },
+			{ "str": "10", "val": 9 },],
+		"defaultValue": 1
+	},{
+		"id": 528,
+		"name": "Seq1 Randomize Octave",
+		"paramId": 65,
+		"globalParamId": 92,
+		"type": "LIST",
+		"list": [{ "str": "Off",  "val": 0 }, { "str": "On",  "val": 1 },],
+		"defaultValue": 0
+	},	{
+		"id": 529,
+		"name": "Seq2 Randomize Octave",
+		"paramId": 65,
+		"globalParamId": 93,
+		"type": "LIST",
+		"list": [{ "str": "Off",  "val": 0 }, { "str": "On",  "val": 1 },],
+		"defaultValue": 0
+	},
+	{
+	    "id": 531,
+	    "name": "Auto-sync",
+	    "paramId": 65,
+	    "globalParamId": 17,
+	    "type": "LIST",
+	    "list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+	    "defaultValue": 0
+	},
+
+
+	{
+		"id": 530,
+		"name": "Clock In/Out Settings",
+		"paramId": 65,
+		"globalParamId": 16,
+		"type": "LIST",
+		"list": [{ "str": "1step", "val": 0 }, { "str": "24ppq", "val": 1 }, { "str": "48ppq", "val": 2 }, { "str": "2PPQ (Korg)", "val": 3 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 532,
+		"name": "Tap Tempo",
+		"paramId": 65,
+		"globalParamId": 18,
+		"type": "LIST",
+		"list": [{ "str": "2", "val": 2 }, { "str": "3", "val": 3 }, { "str": "4", "val": 4 }],
+		"defaultValue": 3
+	},
+	{
+		"id": 534,
+		"name": "Tempo",
+		"paramId": 65,
+		"globalParamId": 20,
+		"type": "LIST",
+		"list": [{ "str": "Global", "val": 0 }, { "str": "Project", "val": 1 }],
+		"defaultValue": 1
+	},
+	{
+		"id": 535,
+		"name": "Wait to Load Project",
+		"paramId": 65,
+		"globalParamId": 21,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"defaultValue": 1
+	},
+	{
+		"id": 536,
+		"name": "Wait to Load Pattern",
+		"paramId": 65,
+		"globalParamId": 22,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"defaultValue": 1
+	},
+
+
+	{
+		"id": 540,
+		"name": "Metronome On/Off",
+		"paramId": 65,
+		"globalParamId": 32,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 541,
+		"name": "Metronome Note",
+		"paramId": 65,
+		"globalParamId": 33,
+		"type": "NOTE",
+		"defaultValue": 37
+	},
+	{
+		"id": 542,
+		"name": "Metronome Port",
+		"paramId": 65,
+		"globalParamId": 34,
+		"type": "LIST",
+		"list": [{ "str": "USB", "val": 1 }, { "str": "MIDI", "val": 2 }, { "str": "USB&MIDI", "val": 3 }],
+		"defaultValue": 3
+	},
+	{
+		"id": 543,
+		"name": "Metronome Channel",
+		"paramId": 65,
+		"globalParamId": 35,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 9
+	},
+	{
+		"id": 544,
+		"name": "Bar Velocity",
+		"paramId": 65,
+		"globalParamId": 36,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 01,
+		"maxValue": 127,
+		"defaultValue": 127
+	},
+	{
+		"id": 545,
+		"name": "Beat Velocity",
+		"paramId": 65,
+		"globalParamId": 37,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 01,
+		"maxValue": 127,
+		"defaultValue": 80
+	},
+
+
+
+	{
+		"id": 550,
+		"name": "Transports",
+		"paramId": 65,
+		"globalParamId": 96,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "MIDI", "val": 1 }, { "str": "MMC", "val": 2 }, { "str": "Both", "val": 3 }],
+		"defaultValue": 3
+	},
+	{
+		"id": 551,
+		"name": "Stop Channel",
+		"paramId": 65,
+		"globalParamId": 97,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 552,
+		"name": "Rec Channel",
+		"paramId": 65,
+		"globalParamId": 98,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 553,
+		"name": "Play Channel",
+		"paramId": 65,
+		"globalParamId": 99,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 554,
+		"name": "Stop CC",
+		"paramId": 65,
+		"globalParamId": 100,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 51
+	},
+	{
+		"id": 555,
+		"name": "Rec CC",
+		"paramId": 65,
+		"globalParamId": 101,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 50
+	},
+	{
+		"id": 556,
+		"name": "Play CC",
+		"paramId": 65,
+		"globalParamId": 102,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"defaultValue": 54
+	},
+
+
+	{
+		"id": 560,
+		"name": "Drum Gate Mode",
+		"paramId": 65,
+		"globalParamId": 38,
+		"type": "LIST",
+		"list": [{ "str": "Positive", "val": 0 }, { "str": "Negative", "val": 1 }],
+		"defaultValue": 0
+	},
+	{
+		"id": 561,
+		"name": "Drum Map",
+		"paramId": 65,
+		"globalParamId": 39,
+		"type": "LIST",
+		"list": [{ "str": "Custom", "val": 0 }, { "str": "Spark", "val": 1 }, { "str": "General MIDI", "val": 2 }, { "str": "Chromatic", "val": 3 }],
+		"defaultValue": 3
+	},
+
+
+
+
+	{
+		"id": 100,
+		"name": "Pad #1",
+		"paramId": 65,
+		"globalParamId": 48,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 36
+	},
+
+	{
+		"id": 101,
+		"name": "Pad #2",
+		"paramId": 65,
+		"globalParamId": 49,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 44
+	},
+
+	{
+		"id": 102,
+		"name": "Pad #3",
+		"paramId": 65,
+		"globalParamId": 50,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 45
+	},
+
+	{
+		"id": 103,
+		"name": "Pad #4",
+		"paramId": 65,
+		"globalParamId": 51,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 46
+	},
+
+	{
+		"id": 104,
+		"name": "Pad #5",
+		"paramId": 65,
+		"globalParamId": 52,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 47
+	},
+
+	{
+		"id": 105,
+		"name": "Pad #6",
+		"paramId": 65,
+		"globalParamId": 53,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 48
+	},
+
+	{
+		"id": 106,
+		"name": "Pad #7",
+		"paramId": 65,
+		"globalParamId": 54,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 49
+	},
+
+	{
+		"id": 107,
+		"name": "Pad #8",
+		"paramId": 65,
+		"globalParamId": 55,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 50
+	},
+
+	{
+		"id": 108,
+		"name": "Pad #9",
+		"paramId": 65,
+		"globalParamId": 56,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 36
+	},
+
+	{
+		"id": 109,
+		"name": "Pad #10",
+		"paramId": 65,
+		"globalParamId": 57,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 37
+	},
+
+	{
+		"id": 110,
+		"name": "Pad #11",
+		"paramId": 65,
+		"globalParamId": 58,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 38
+	},
+
+	{
+		"id": 111,
+		"name": "Pad #12",
+		"paramId": 65,
+		"globalParamId": 59,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 39
+	},
+
+	{
+		"id": 112,
+		"name": "Pad #13",
+		"paramId": 65,
+		"globalParamId": 60,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 40
+	},
+
+	{
+		"id": 113,
+		"name": "Pad #14",
+		"paramId": 65,
+		"globalParamId": 61,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 41
+	},
+
+	{
+		"id": 114,
+		"name": "Pad #15",
+		"paramId": 65,
+		"globalParamId": 62,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 42
+	},
+
+	{
+		"id": 115,
+		"name": "Pad #16",
+		"paramId": 65,
+		"globalParamId": 63,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+		"defaultValue": 43
+	},
+
+	{
+		"id": 120,
+		"name": "Pad #1 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 117,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 121,
+		"name": "Pad #2 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 118,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 122,
+		"name": "Pad #3 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 119,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 123,
+		"name": "Pad #4 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 120,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 124,
+		"name": "Pad #5 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 121,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 125,
+		"name": "Pad #6 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 122,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 126,
+		"name": "Pad #7 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 123,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 127,
+		"name": "Pad #8 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 124,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 128,
+		"name": "Pad #9 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 109,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 129,
+		"name": "Pad #10 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 110,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 130,
+		"name": "Pad #11 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 111,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 131,
+		"name": "Pad #12 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 112,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 132,
+		"name": "Pad #13 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 113,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 133,
+		"name": "Pad #14 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 114,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 134,
+		"name": "Pad #15 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 115,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	}, {
+		"id": 135,
+		"name": "Pad #16 Midi Ch",
+		"paramId": 65,
+		"globalParamId": 116,
+		"type": "CHANNEL",
+		"list": [{ "str": "Drum Channel", "val": 66 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	},
+
+
+
+
+	{
+		"id": 116,
+		"name": "DrumMap Spark",
+		"paramId": 65,
+		"globalParamId": 45,
+		"type": "TEXT_LIST",
+		"list": [{ "str": "Pad#1  - 68", "val": 0 },  { "str": "Pad#2  - 69", "val": 1 },  { "str": "Pad#3  - 70", "val": 2 },  { "str": "Pad#4  - 71", "val": 3 },
+				 { "str": "Pad#5  - 72", "val": 5 },  { "str": "Pad#6  - 73", "val": 6 },  { "str": "Pad#7  - 74", "val": 7 },  { "str": "Pad#8  - 75", "val": 8 },
+				 { "str": "Pad#9  - 60", "val": 9 },  { "str": "Pad#10 - 61", "val": 10 }, { "str": "Pad#11 - 62", "val": 11 }, { "str": "Pad#12 - 63", "val": 12 },
+				 { "str": "Pad#13 - 64", "val": 13 }, { "str": "Pad#14 - 65", "val": 14 }, { "str": "Pad#15 - 66", "val": 15 }, { "str": "Pad#16 - 67", "val": 16 }],
+		"conditions": [{"paramId" : 39, "values" : [1]}],
+		"defaultValue": 0
+	},{
+		"id": 117,
+		"name": "DrumMap General MIDI",
+		"paramId": 65,
+		"globalParamId": 46,
+		"type": "TEXT_LIST",
+		"list": [{ "str": "Pad#1  - 39", "val": 0 },  { "str": "Pad#2  - 37", "val": 1 },  { "str": "Pad#3  - 51", "val": 2 },  { "str": "Pad#4  - 52", "val": 3 },
+				 { "str": "Pad#5  - 60", "val": 5 },  { "str": "Pad#6  - 66", "val": 6 },  { "str": "Pad#7  - 58", "val": 7 },  { "str": "Pad#8  - 83", "val": 8 },
+				 { "str": "Pad#9  - 35", "val": 9 },  { "str": "Pad#10 - 38", "val": 10 }, { "str": "Pad#11 - 42", "val": 11 }, { "str": "Pad#12 - 46", "val": 12 },
+				 { "str": "Pad#13 - 43", "val": 13 }, { "str": "Pad#14 - 48", "val": 14 }, { "str": "Pad#15 - 41", "val": 15 }, { "str": "Pad#16 - 49", "val": 16 }],
+		"conditions": [{"paramId" : 39, "values" : [2]}],
+		"defaultValue": 0
+	},{
+		"id": 118,
+		"name": "DrumMap Chromatic",
+		"paramId": 65,
+		"globalParamId": 47,
+		"type": "TEXT_LIST",
+		"list": [{ "str": "Pad#1  - 36", "val": 0 },  { "str": "Pad#2  - 37", "val": 1 },  { "str": "Pad#3  - 38", "val": 2 },  { "str": "Pad#4  - 39", "val": 3 },
+				 { "str": "Pad#5  - 40", "val": 5 },  { "str": "Pad#6  - 41", "val": 6 },  { "str": "Pad#7  - 42", "val": 7 },  { "str": "Pad#8  - 43", "val": 8 },
+				 { "str": "Pad#9  - 44", "val": 9 },  { "str": "Pad#10 - 45", "val": 10 }, { "str": "Pad#11 - 46", "val": 11 }, { "str": "Pad#12 - 47", "val": 12 },
+				 { "str": "Pad#13 - 48", "val": 13 }, { "str": "Pad#14 - 49", "val": 14 }, { "str": "Pad#15 - 50", "val": 15 }, { "str": "Pad#16 - 51", "val": 16 }],
+		"conditions": [{"paramId" : 39, "values" : [3]}],
+		"defaultValue": 0
+	},
+	{
+		"id": 119,
+		"name": "Empty Row",
+		"paramId": 65,
+		"globalParamId": 44,
+		"type": "TEXT_LIST",
+		"list": [{ "str": "", "val": 0 }],
+		"conditions": [{"paramId" : 39, "values" : [0]}],
+	},
+
+
+	{
+		"id": 200,
+		"name": "C",
+		"paramId": 65,
+		"globalParamId": 80,
+		"type": "TEXT_LIST",
+		"list": [{ "str": "C  - On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 201,
+		"name": "C#",
+		"paramId": 65,
+		"globalParamId": 81,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 202,
+		"name": "D",
+		"paramId": 65,
+		"globalParamId": 82,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 203,
+		"name": "D#",
+		"paramId": 65,
+		"globalParamId": 83,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 204,
+		"name": "E",
+		"paramId": 65,
+		"globalParamId": 84,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 205,
+		"name": "F",
+		"paramId": 65,
+		"globalParamId": 85,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 206,
+		"name": "F#",
+		"paramId": 65,
+		"globalParamId": 86,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 207,
+		"name": "G",
+		"paramId": 65,
+		"globalParamId": 87,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 208,
+		"name": "G#",
+		"paramId": 65,
+		"globalParamId": 88,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 209,
+		"name": "A",
+		"paramId": 65,
+		"globalParamId": 89,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 210,
+		"name": "A#",
+		"paramId": 65,
+		"globalParamId": 90,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+	{
+		"id": 211,
+		"name": "B",
+		"paramId": 65,
+		"globalParamId": 91,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 127 }],
+		"defaultValue": 127
+	},
+
+
+
+
+	{
+		"id": 7,
+		"name": "MIDI Channel",
+		"paramId": 2,
+		"type": "CHANNEL",
+		"list": [{ "str": "User", "val": 65 }],
+		"conditions": [{"paramId" : 1, "values" : [1, 4, 8, 9, 11, 12, 13, 14, 15] }]
+	},
+
+	{
+		"id": 8,
+		"name": "MIDI CC",
+		"paramId": 3,
+		"type": "CC_NUM",
+		"conditions": [{"paramId" : 1, "values" : [1, 8] }]
+	},
+
+
+
+	{
+		"id": 11,
+		"desc":"Mode for knobs",
+		"name": "Mode",
+		"paramId": 1,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "CC", "val": 1 },
+				 { "str": "Program Change", "val": 14 }, { "str": "Bank LSB", "val": 12 }, { "str": "Bank MSB", "val": 13 },
+				 { "str": "Aftertouch", "val": 15 }, { "str": "NRPN", "val": 4 }, ]
+	},
+
+	{
+		"id": 12,
+		"desc": "Mode for Pads",
+		"name": "Mode",
+		"paramId": 1,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 },
+						 { "str": "CC", "val": 8 }, { "str": "MIDI Note", "val": 9 },
+						 { "str": "Program Change", "val": 11 }, { "str": "NRPN", "val": 4 }]
+	},
+
+	{
+		"id": 20,
+		"name": "Option",
+		"paramId": 6,
+		"type": "LIST",
+		"list": [{ "str": "Absolute", "val": 0 }, { "str": "Relative #1", "val": 1 },
+						 { "str": "Relative #2", "val": 2 }, { "str": "Relative #3", "val": 3 }],
+		"conditions": [{"paramId" : 1, "values" : [1] }]
+	},
+
+	{
+		"id": 21,
+		"name": "Option",
+		"paramId": 6,
+		"type": "LIST",
+		"list": [{ "str": "NRPN", "val": 0 }, { "str": "RPN", "val": 1 }],
+		"conditions": [{"paramId" : 1,
+								    "values" : [4]
+								  }]
+	},
+
+	{
+		"id": 22,
+		"name": "Play Mode",
+		"paramId": 6,
+		"type": "LIST",
+		"list": [{ "str": "Toggle", "val": 0 }, { "str": "Gate", "val": 1 }],
+		"conditions": [{"paramId" : 1,
+								    "values" : [8,9]
+								  }]
+	},
+
+	{
+		"id": 26,
+		"name": "MMC",
+		"paramId": 3,
+		"type": "MMC",
+		"conditions": [{"paramId" : 1, "values" : [7]}]
+	},
+
+	{
+		"id": 29,
+		"name": "Note",
+		"paramId": 3,
+		"type": "NOTE",
+		"conditions": [{"paramId" : 1, "values" : [9] }]
+	},
+
+
+
+	{
+		"id": 9,
+		"name": "Min Range",
+		"paramId": 4,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [
+			{"paramId": 1, "values" : [1]},
+			{"paramId": 6, "values": [0]}]
+	},
+
+	{
+		"id": 10,
+		"name": "Max Range",
+		"paramId": 5,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [
+			{"paramId": 1, "values" : [1]},
+			{"paramId": 6, "values": [0]}]
+	},
+
+	{
+		"id": 41,
+		"name": "Min Range",
+		"paramId": 4,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [
+			{"paramId": 1, "values" : [12, 13, 14, 15]}]
+	},
+
+	{
+		"id": 42,
+		"name": "Max Range",
+		"paramId": 5,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [
+			{"paramId": 1, "values" : [12, 13, 14, 15]}]
+	},
+    {
+		"id": 27,
+		"name": "Off Value",
+		"paramId": 4,
+		"type": "RANGE",
+		"minValue":0,
+		"maxValue":127,
+		"conditions": [{"paramId" : 1, "values" : [8] }]
+	},
+
+	{
+		"id": 28,
+		"name": "On Value",
+		"paramId": 5,
+		"type": "RANGE",
+		"minValue":0,
+		"maxValue":127,
+		"conditions": [{"paramId" : 1, "values" : [8] }]
+	},
+	{
+		"id": 33,
+		"name": "Bank LSB",
+		"paramId": 4,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1,"values" : [4,11]}]
+	},
+	{
+		"id": 34,
+		"name": "Bank MSB",
+		"paramId": 5,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1, "values" : [4,11]}]
+	},
+	{
+		"id": 38,
+		"name": "Min Vel Range",
+		"paramId": 4,
+		"type": "RANGE",
+		"minValue": 1,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1, "values" : [9] }]
+	},
+
+	{
+		"id": 39,
+		"name": "Max Vel Range",
+		"paramId": 5,
+		"type": "RANGE",
+		"minValue": 1,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1, "values" : [9] }]
+	},
+	{
+		"id": 43,
+		"name": "Note Off Velocity",
+		"paramId": 4,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1, "values" : [9] }]
+	},
+
+	{
+		"id": 44,
+		"name": "Note On Velocity",
+		"paramId": 5,
+		"type": "RANGE",
+		"minValue": 1,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1, "values" : [9] }]
+	},
+
+
+	{
+		"id": 32,
+		"name": "Program Number",
+		"paramId": 3,
+		"type": "RANGE",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1, "values" : [11]}]
+	},
+
+	{
+		"id": 35,
+		"name": "Data value",
+		"paramId": 3,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 127,
+		"conditions": [{"paramId" : 1, "values" : [4]}]
+	},
+
+	{
+		"id": 36,
+		"name": "MIDI Ports",
+		"paramId": 8,
+		"type": "LIST",
+		"list": [{ "str": "USB", "val": 1 }, { "str": "MIDI", "val": 2 }, { "str": "USB&MIDI", "val": 3 }],
+		"conditions": [{"paramId" : 1, "values" : [1, 4, 8, 9, 11, 12, 13, 14, 15] }]
+	},
+
+	{
+		"id": 37,
+		"name": "Acceleration",
+		"paramId": 7,
+		"type": "LIST",
+		"list": [{ "str": "Slow", "val": 0 }, { "str": "Medium", "val": 1 }, { "str": "Fast", "val": 2 }, { "str": "Fast2", "val": 3 }, { "str": "User", "val": 4 }],
+		"conditions": [{"paramId" : 1, "values" : [1] }]
+	},
+
+	{
+		"id": 40,
+		"name": "Loop",
+		"paramId": 6,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"conditions": [{"paramId" : 1, "values" : [12, 13, 14] }]
+	},
+
+
+	{
+		"id": 60,
+		"name": "SEQ Length",
+		"paramId": 99,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 1,
+		"maxValue": 64,
+		"syncedAlone": 1,
+		"defaultValue": 16
+	},
+	{
+		"id": 59,
+		"name": "HIDDEN Seq Length for Drum",
+		"paramId": 99,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 1,
+		"maxValue": 64,
+		"syncedAlone": 1,
+		"defaultValue": 16,
+		"hidden" : 1
+	},
+	{
+		"id": 61,
+		"name": "Playback direction",
+		"paramId": 97,
+		"type": "LIST",
+		"list": [{ "str": "Forward", "val": 0 }, { "str": "Reverse", "val": 1 }, { "str": "Back&Forth", "val": 2 }],
+		"syncedAlone": 1,
+		"defaultValue": 0
+	},
+	{
+		"id": 62,
+		"name": "Time Division",
+		"paramId": 98,
+		"type": "LIST",
+		"list": [{ "str": "1/4", "val": 0 }, { "str": "1/8", "val": 1 }, { "str": "1/16", "val": 2 }, { "str": "1/32", "val": 3 }],
+		"syncedAlone": 1,
+		"defaultValue": 2
+	},
+	{
+		"id": 63,
+		"name": "Swing(%)",
+		"paramId": 100,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 50,
+		"maxValue": 75,
+		"syncedAlone": 1,
+		"defaultValue": 50
+	},
+	{
+		"id": 64,
+		"name": "Randomness(%)",
+		"paramId": 102,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 100,
+		"syncedAlone": 1,
+		"defaultValue": 0
+	},
+	{
+		"id": 65,
+		"name": "Probability(%)",
+		"paramId": 103,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 100,
+		"syncedAlone": 1,
+		"defaultValue": 0
+	},
+	{
+		"id": 66,
+		"name": "Transpose",
+		"paramId": 96,
+		"type": "LIST",
+		"list": [
+		    { "str": "-36", "val": 24 }, { "str": "-35", "val": 25 }, { "str": "-34", "val": 26 }, { "str": "-33", "val": 27 },
+		    { "str": "-32", "val": 28 }, { "str": "-31", "val": 29 }, { "str": "-30", "val": 30 }, { "str": "-29", "val": 31 },
+		    { "str": "-28", "val": 32 }, { "str": "-27", "val": 33 }, { "str": "-26", "val": 34 }, { "str": "-25", "val": 35 },
+		    { "str": "-24", "val": 36 }, { "str": "-23", "val": 37 }, { "str": "-22", "val": 38 }, { "str": "-21", "val": 39 },
+		    { "str": "-20", "val": 40 }, { "str": "-19", "val": 41 }, { "str": "-18", "val": 42 }, { "str": "-17", "val": 43 },
+		    { "str": "-16", "val": 44 }, { "str": "-15", "val": 45 }, { "str": "-14", "val": 46 }, { "str": "-13", "val": 47 },
+		    { "str": "-12", "val": 48 }, { "str": "-11", "val": 49 }, { "str": "-10", "val": 50 }, { "str": "-9", "val": 51 },
+			{ "str": "-8", "val": 52 }, { "str": "-7", "val": 53 }, { "str": "-6", "val": 54 }, { "str": "-5", "val": 55 },
+			{ "str": "-4", "val": 56 }, { "str": "-3", "val": 57 }, { "str": "-2", "val": 58 }, { "str": "-1", "val": 59 },
+			{ "str": "0", "val": 60 },
+			{ "str": "+1", "val": 61 }, { "str": "+2", "val": 62 }, { "str": "+3", "val": 63 }, { "str": "+4", "val": 64 },
+			{ "str": "+5", "val": 65 }, { "str": "+6", "val": 66 }, { "str": "+7", "val": 67 }, { "str": "+8", "val": 68 },
+			{ "str": "+9", "val": 69 }, { "str": "+10", "val": 70 }, { "str": "+11", "val": 71 }, { "str": "+12", "val": 72 },
+			{ "str": "+13", "val": 73 }, { "str": "+14", "val": 74}, { "str": "+15", "val": 75 }, { "str": "+16", "val": 76 },
+
+			{ "str": "+17", "val": 77 }, { "str": "+18", "val": 78}, { "str": "+19", "val": 79 }, { "str": "+20", "val": 80 },
+			{ "str": "+21", "val": 81 }, { "str": "+22", "val": 82}, { "str": "+23", "val": 83 }, { "str": "+24", "val": 84 },
+			{ "str": "+25", "val": 85 }, { "str": "+26", "val": 86}, { "str": "+27", "val": 87 }, { "str": "+28", "val": 88 },
+			{ "str": "+29", "val": 89 }, { "str": "+30", "val": 90}, { "str": "+31", "val": 91 }, { "str": "+32", "val": 92 },
+			{ "str": "+33", "val": 93 }, { "str": "+34", "val": 94}, { "str": "+35", "val": 95 }, { "str": "+36", "val": 96 },
+			{ "str": "+37", "val": 97 }, { "str": "+38", "val": 98}, { "str": "+39", "val": 99 }, { "str": "+40", "val": 100 },
+			{ "str": "+41", "val": 101 }, { "str": "+42", "val": 102}, { "str": "+43", "val": 103 }, { "str": "+44", "val": 104 },
+			{ "str": "+45", "val": 105 }, { "str": "+46", "val": 106}, { "str": "+47", "val": 107 },
+			],
+		"syncedAlone": 1,
+		"defaultValue": 60
+	},
+	{
+		"id": 67,
+		"name": "Triplet",
+		"paramId": 101,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"syncedAlone": 1,
+		"defaultValue": 0
+	},
+
+	{
+		"id": 69,
+		"comment" : "The 3 next items are part of the project tempo",
+		"name": "Project Tempo Part2 - MidSB",
+		"paramId": 110,
+		"minValue": 0,
+		"maxValue": 127,
+		"type": "HIDDEN",
+		"syncedAlone": 1
+	},
+	{
+		"id": 70,
+		"name": "Project Tempo Part3 - LSB",
+		"paramId": 111,
+		"minValue": 0,
+		"maxValue": 127,
+		"type": "HIDDEN",
+		"syncedAlone": 1
+	},
+	{
+		"id": 68,
+		"name": "Tempo",
+		"paramId": 109,
+		"minValue": 0,
+		"maxValue": 127,
+		"type": "RANGE_HORIZONTAL",
+		"syncedAlone": 1,
+		"linked_fields_id" : [69, 70],
+		"bigdata_precision" : 2,
+		"bigdata_minvalue" : 3000,
+		"bigdata_maxvalue" : 30000
+
+	},
+
+	  {
+	    "id": 71,
+	    "name": "Polyrhythm",
+	    "paramId": 80,
+	    "type": "LIST",
+	    "list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+	    "syncedAlone": 1,
+	    "defaultValue": 0
+	  },
+	{
+		"id": 72,
+		"name": "Scale",
+		"paramId": 81,
+		"type": "LIST",
+		"list": [	{ "str": "Chromatic", "val": 0 }, 
+					{ "str": "Major", "val": 1 },
+    			  	{ "str": "Minor", "val": 2 },
+    			  	{ "str": "Dorian", "val": 3 },
+    			  	{ "str": "Mixolydian", "val": 4 },
+    			  	{ "str": "Harmonic Minor", "val": 5 },
+    			  	{ "str": "Blues", "val": 6 },
+    			  	{ "str": "User", "val": 7 },
+				],
+		"syncedAlone": 1,
+		"defaultValue": 0
+	},
+
+	{
+		"id": 80,
+		"name": "Step On/Off",
+		"paramId": 105,
+		"type": "LIST",
+		"list": [{ "str": "Off", "val": 0 }, { "str": "On", "val": 1 }],
+		"syncedAlone": 1,
+		"defaultValue": 0
+	},
+	{
+		"id": 81,
+		"name": "Velocity",
+		"paramId": 106,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 1,
+		"maxValue": 127,
+		"syncedAlone": 1,
+		"defaultValue": 100
+	},
+	{
+		"id": 82,
+		"name": "Gate Length(%)",
+		"paramId": 107,
+		"type": "RANGE_HORIZONTAL",
+		"minValue": 0,
+		"maxValue": 100,
+		"syncedAlone": 1,
+		"defaultValue": 50
+	},
+	{
+		"id": 83,
+		"name": "Pitch",
+		"paramId": 104,
+		"type": "NOTE",
+		"syncedAlone": 1,
+		"defaultValue": 60
+	},
+	{
+		"id": 84,
+		"name": "Shift",
+		"paramId": 104,
+		"type": "LIST",
+		"list": [
+			{ "str": "-50", "val": 0 },  { "str": "-49", "val": 1 },
+			{ "str": "-48", "val": 2 },  { "str": "-47", "val": 3 },  { "str": "-46", "val": 4 }, { "str": "-45", "val": 5 },
+			{ "str": "-44", "val": 6 },  { "str": "-43", "val": 7 },  { "str": "-42", "val": 8 }, { "str": "-41", "val": 9 },
+			{ "str": "-40", "val": 10 }, { "str": "-39", "val": 11 }, { "str": "-38", "val": 12 }, { "str": "-37", "val": 13 },
+			{ "str": "-36", "val": 14 }, { "str": "-35", "val": 15 }, { "str": "-34", "val": 16 }, { "str": "-33", "val": 17 },
+		    { "str": "-32", "val": 18 }, { "str": "-31", "val": 19 }, { "str": "-30", "val": 20 }, { "str": "-29", "val": 21 },
+		    { "str": "-28", "val": 22 }, { "str": "-27", "val": 23 }, { "str": "-26", "val": 24 }, { "str": "-25", "val": 25 },
+		    { "str": "-24", "val": 26 }, { "str": "-23", "val": 27 }, { "str": "-22", "val": 28 }, { "str": "-21", "val": 29 },
+		    { "str": "-20", "val": 30 }, { "str": "-19", "val": 31 }, { "str": "-18", "val": 32 }, { "str": "-17", "val": 33 },
+		    { "str": "-16", "val": 34 }, { "str": "-15", "val": 35 }, { "str": "-14", "val": 36 }, { "str": "-13", "val": 37 },
+		    { "str": "-12", "val": 38 }, { "str": "-11", "val": 39 }, { "str": "-10", "val": 40 }, { "str": "-9", "val": 41 },
+			{ "str": "-8", "val": 42 }, { "str": "-7", "val": 43 }, { "str": "-6", "val": 44 }, { "str": "-5", "val": 45 },
+			{ "str": "-4", "val": 46 }, { "str": "-3", "val": 47 }, { "str": "-2", "val": 48 }, { "str": "-1", "val": 49 },
+			{ "str": "0", "val": 50 },
+			{ "str": "+1", "val": 51 }, { "str": "+2", "val": 52 }, { "str": "+3", "val": 53 }, { "str": "+4", "val": 54 },
+			{ "str": "+5", "val": 55 }, { "str": "+6", "val": 56 }, { "str": "+7", "val": 57 }, { "str": "+8", "val": 58 },
+			{ "str": "+9", "val": 59 }, { "str": "+10", "val": 60 }, { "str": "+11", "val": 61 }, { "str": "+12", "val": 62 },
+			{ "str": "+13", "val": 63 }, { "str": "+14", "val": 64}, { "str": "+15", "val": 65 }, { "str": "+16", "val": 66 },
+			{ "str": "+17", "val": 67 }, { "str": "+18", "val": 68}, { "str": "+19", "val": 69 }, { "str": "+20", "val": 70 },
+			{ "str": "+21", "val": 71 }, { "str": "+22", "val": 72}, { "str": "+23", "val": 73 }, { "str": "+24", "val": 74 },
+			{ "str": "+25", "val": 75 }, { "str": "+26", "val": 76}, { "str": "+27", "val": 77 }, { "str": "+28", "val": 78 },
+			{ "str": "+29", "val": 79 }, { "str": "+30", "val": 80}, { "str": "+31", "val": 81 }, { "str": "+32", "val": 82 },
+			{ "str": "+33", "val": 83 }, { "str": "+34", "val": 84}, { "str": "+35", "val": 85 }, { "str": "+36", "val": 86 },
+			{ "str": "+37", "val": 87 }, { "str": "+38", "val": 88}, { "str": "+39", "val": 89 }, { "str": "+40", "val": 90 },
+			{ "str": "+41", "val": 91 }, { "str": "+42", "val": 92}, { "str": "+43", "val": 93 }, { "str": "+44", "val": 94 },
+			{ "str": "+45", "val": 95 }, { "str": "+46", "val": 96}, { "str": "+47", "val": 97 }, { "str": "+47", "val": 97 },
+			{ "str": "+49", "val": 99 }, { "str": "+50", "val": 100},
+			],
+		"syncedAlone": 1,
+		"defaultValue": 50
+	},
+	{
+		"id": 90,
+		"name": "Pattern Id",
+		"paramId": 82,
+		"type": "CHANNEL",
+		"list": [{ "str": "Undefined", "val": 127 }],
+		"syncedAlone": 1,
+		"defaultValue": 127
+	},
+	],
+
+
+
+
+
+
+
+
+
+
+
+
+	"globalFields-show-only-when-connected" : 1,
+	"globalFields": [
+	{
+		"group": "Global",
+		"fields": [514,520,523,525,526,527,528,529,531,580],
+	},
+	{
+    	"group": "Touch Strip",
+    	"fields": [581,582],
+  	},
+	{
+		"group": "MIDI Channel",
+		"fields": [501,502,503,504,505,506,507],
+	},
+	{
+		"group": "Mackie Control / HUI",
+		"fields": [500],
+	},
+	{
+		"group": "Transposition",
+		"fields": [510,511,512,513],
+	},
+	{
+		"group": "CV/Gate Mode",
+		"fields": [515, 570, 572, 516, 571, 573, 517, 518, 560],
+	},
+	{
+		"group": "Sync",
+		"fields": [530,532,534,535,536],
+	},
+	{
+		"group": "Metronome",
+		"fields": [540,541,542,543,544,545],
+	},
+	{
+		"group": "Transports",
+		"fields": [550,551,552,553,554,555,556],
+	},
+	{
+		"group": "Drum Map",
+		"groupNbColumnsMax": 3,
+		"fields": [561, 100, 120, 119, 101, 121, 119, 102, 122, 119, 103, 123, 119, 104, 124, 119,
+						105, 125, 119, 106, 126, 119, 107, 127, 119, 108, 128, 119, 109, 129, 119,
+						110, 130, 119, 111, 131, 119, 112, 132, 119, 113, 133, 119, 114, 134, 119,
+						115, 135, 119, 
+						116, 117, 118],
+	},
+	{
+		"group": "User Scale",
+		"fields": [200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211],
+	}
+	],
+
+
+
+	"itemTypes": [
+	{
+		"id": "knob",
+		"fields": [11, 20, 21, 7, 8, 36, 37, 9, 10, 33, 34, 40, 41, 42],
+		"copy-txt":"Copy value to other knobs"
+	},
+
+	{
+		"id": "pad",
+		"fields": [12, 21, 22, 7, 26, 8, 36, 27, 28, 29, 32, 35, 33, 34, 38, 39],
+		"copy-txt":"Copy value to other pads"
+	},
+
+	{
+		"id": "step",
+		"fields": [12, 21, 22, 7, 26, 8, 36, 27, 28, 29, 32, 35, 33, 34, 43, 44],
+		"copy-txt":"Copy value to other steps"
+	},
+
+	{
+		"id": "project",
+		"fields": [63, 64, 65, 68, 69, 70]
+	},
+
+	{
+		"id": "seq",
+		"fields": []
+	},
+	{
+		"id": "seq-idX",
+		"fields": [63, 64, 65, 60, 62, 67, 61, 66, 72]
+	},
+	{
+		"id": "drum-idX",
+		"fields": [63, 64, 65, 62, 67, 61, 71, 59]
+	},
+	{
+		"id": "scene-idX",
+		"fields": []
+	},
+	{
+		"id": "seq-idX-stepN",
+		"fields": [81, 82, 83, 80]
+	},
+	{
+		"id": "drum-idX-trackT",
+		"fields": [60]
+	},
+	{
+		"id": "scene-idX-songS",
+		"fields": []
+	},
+	{
+		"id": "drum-idX-trackT-stepN",
+		"fields": [81, 82, 84, 80]
+	},
+	{
+		"id": "scene-idX-songS-patternP",
+		"fields": [90]
+	},
+	{
+		"id": "transport_button",
+		"fields": [12, 7, 8, 36, 9, 10, 22, 26, 27, 28, 29, 32, 33, 34, 35, 38, 39]
+	},
+	{
+		"id": "undefined",
+		"fields": []
+	}],
+
+	"controls": [
+
+	{
+		"id": "knob1",
+		"items": [
+		{
+			"id": 32,
+			"name": "Knob 1",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob2",
+		"items": [
+		{
+			"id": 33,
+			"name": "Knob 2",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob3",
+		"items": [
+		{
+			"id": 34,
+			"name": "Knob 3",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob4",
+		"items": [
+		{
+			"id": 35,
+			"name": "Knob 4",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob5",
+		"items": [
+		{
+			"id": 36,
+			"name": "Knob 5",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob6",
+		"items": [
+		{
+			"id": 37,
+			"name": "Knob 6",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob7",
+		"items": [
+		{
+			"id": 38,
+			"name": "Knob 7",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob8",
+		"items": [
+		{
+			"id": 39,
+			"name": "Knob 8",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob9",
+		"items": [
+		{
+			"id": 40,
+			"name": "Knob 9",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob10",
+		"items": [
+		{
+			"id": 41,
+			"name": "Knob 10",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob11",
+		"items": [
+		{
+			"id": 42,
+			"name": "Knob 11",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob12",
+		"items": [
+		{
+			"id": 43,
+			"name": "Knob 12",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob13",
+		"items": [
+		{
+			"id": 44,
+			"name": "Knob 13",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob14",
+		"items": [
+		{
+			"id": 45,
+			"name": "Knob 14",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob15",
+		"items": [
+		{
+			"id": 46,
+			"name": "Knob 15",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "knob16",
+		"items": [
+		{
+			"id": 47,
+			"name": "Knob 16",
+			"type": "knob",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "btnPlay",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 88,
+			"name": "Play",
+			"type": "undefined"
+		}]
+	},
+
+	{
+		"id": "btnStop",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 89,
+			"name": "Stop",
+			"type": "undefined"
+		}]
+	},
+
+	{
+		"id": "pad1",
+		"items": [
+		{
+			"id": 112,
+			"name": "Pad 1",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad2",
+		"items": [
+		{
+			"id": 113,
+			"name": "Pad 2",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad3",
+		"items": [
+		{
+			"id": 114,
+			"name": "Pad 3",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad4",
+		"items": [
+		{
+			"id": 115,
+			"name": "Pad 4",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad5",
+		"items": [
+		{
+			"id": 116,
+			"name": "Pad 5",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad6",
+		"items": [
+		{
+			"id": 117,
+			"name": "Pad 6",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad7",
+		"items": [
+		{
+			"id": 118,
+			"name": "Pad 7",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad8",
+		"items": [
+		{
+			"id": 119,
+			"name": "Pad 8",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad9",
+		"items": [
+		{
+			"id": 120,
+			"name": "Pad 9",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad10",
+		"items": [
+		{
+			"id": 121,
+			"name": "Pad 10",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad11",
+		"items": [
+		{
+			"id": 122,
+			"name": "Pad 11",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad12",
+		"items": [
+		{
+			"id": 123,
+			"name": "Pad 12",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad13",
+		"items": [
+		{
+			"id": 124,
+			"name": "Pad 13",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad14",
+		"items": [
+		{
+			"id": 125,
+			"name": "Pad 14",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad15",
+		"items": [
+		{
+			"id": 126,
+			"name": "Pad 15",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "pad16",
+		"items": [
+		{
+			"id": 127,
+			"name": "Pad 16",
+			"type": "pad",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step1",
+		"items": [
+		{
+			"id": 48,
+			"name": "Step 1",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step2",
+		"items": [
+		{
+			"id": 49,
+			"name": "Step 2",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step3",
+		"items": [
+		{
+			"id": 50,
+			"name": "Step 3",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step4",
+		"items": [
+		{
+			"id": 51,
+			"name": "Step 4",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step5",
+		"items": [
+		{
+			"id": 52,
+			"name": "Step 5",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step6",
+		"items": [
+		{
+			"id": 53,
+			"name": "Step 6",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step7",
+		"items": [
+		{
+			"id": 54,
+			"name": "Step 7",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step8",
+		"items": [
+		{
+			"id": 55,
+			"name": "Step 8",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step9",
+		"items": [
+		{
+			"id": 56,
+			"name": "Step 9",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step10",
+		"items": [
+		{
+			"id": 57,
+			"name": "Step 10",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step11",
+		"items": [
+		{
+			"id": 58,
+			"name": "Step 11",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step12",
+		"items": [
+		{
+			"id": 59,
+			"name": "Step 12",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step13",
+		"items": [
+		{
+			"id": 60,
+			"name": "Step 13",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step14",
+		"items": [
+		{
+			"id": 61,
+			"name": "Step 14",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step15",
+		"items": [
+		{
+			"id": 62,
+			"name": "Step 15",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"id": "step16",
+		"items": [
+		{
+			"id": 63,
+			"name": "Step 16",
+			"type": "step",
+			"hierarchy" : "ControllerMap"
+		}]
+	},
+
+	{
+		"tab_name":"Project",
+		"displayed_on_test_only": 1,
+		"id": "project",
+		"items": [
+		{
+			"id": 90,
+			"name": "Project",
+			"type": "project"
+		}]
+	},
+	{
+		"tab_name":"Seq1",
+		"displayed_on_test_only": 1,
+		"id": "seq1",
+		"items": [
+		{
+			"id": 16,
+			"name": "Seq1",
+			"type": "seq",
+			"subitems": [{
+				"id": [1, 16, "SEQ_IDX"],
+				"name":"SEQ_IDX",
+				"type":"seq-idX",
+				"subitems_display_type":"BSP_PIANO_ROLL",
+				"subitems": [{
+					"id" : [1, 64, "STEP_IDX"],
+					"name": "STEP_IDX",
+					"type": "seq-idX-stepN",
+					"hiddenInTreeView":1
+				}],
+				"associated_fields_id": [60]
+			}]
+		}]
+	},
+
+	{
+		"tab_name":"Seq2",
+		"displayed_on_test_only": 1,
+		"id": "seq2",
+		"items": [
+		{
+			"id": 21,
+			"name": "Seq2",
+			"type": "seq",
+			"subitems": [{
+				"id": [1, 16, "SEQ_IDX"],
+				"name":"SEQ_IDX",
+				"type":"seq-idX",
+				"subitems_display_type":"BSP_PIANO_ROLL",
+				"subitems": [{
+					"id" : [1, 64, "STEP_IDX"],
+					"name": "STEP_IDX",
+					"type": "seq-idX-stepN",
+					"hiddenInTreeView":1
+				}],
+				"associated_fields_id": [60]
+			}]
+		}]
+	},
+
+	{
+		"tab_name":"Drum",
+		"displayed_on_test_only": 1,
+		"id": "drum",
+		"items": [
+		{
+			"id": 26,
+			"name": "Drum",
+			"type": "seq",
+			"subitems": [{
+				"id": [1, 16, "SEQ_IDX"],
+				"name":"SEQ_IDX",
+				"type":"drum-idX",
+				"associated_fields_id": [71, 59],
+				"subitems_display_type":"BSP_DRUM_EDITOR",
+				"subitems": [{
+					"id" : [1, 16, "TRACK_IDX"],
+					"name": "TRACK_IDX",
+					"type": "drum-idX-trackT",
+					"hiddenInTreeView":1,
+					"subitems": [{
+						"id" : [1, 64, "STEP_IDX"],
+						"name": "STEP_IDX",
+						"type": "drum-idX-trackT-stepN",
+						"hiddenInTreeView":1
+					}]
+				}],
+			}]
+		}]
+	}, {
+		"id": "scene",		
+		"items": [
+		{
+			"id": 68,
+			"name": "Scene",
+			"type": "scene",
+			"hiddenInTreeView":1,
+			"subitems": [{
+				"id": [1, 16, "SEQ_IDX"],
+				"name":"SEQ_IDX",
+				"type":"scene-idX",	
+				"hiddenInTreeView":1,
+				"subitems": [{
+					"id" : [1, 3, "SONG_IDX"],
+					"name": "SONG_IDX",
+					"type": "scene-idX-songS",
+					"hiddenInTreeView":1,
+					"subitems": [{
+						"id" : [1, 16, "PATTERN_IDX"],
+						"name": "PATTERN_IDX",
+						"type": "scene-idX-songS-patternP",
+						"hiddenInTreeView":1
+					}]
+				}],
+			}]
+		}]
+	},
+
+	{
+		"id": "projectControlMode",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 91,
+			"name": "Control Mode",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "projectKnobs",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 92,
+			"name": "Knobs",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "projectSave",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 93,
+			"name": "Save",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "seq1Knobs",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 17,
+			"name": "Knobs",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "seq1Mute",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 18,
+			"name": "Mute",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "seq1Previous",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 19,
+			"name": "Previous",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "seq1Next",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 20,
+			"name": "Next",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "seq2Knobs",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 22,
+			"name": "Knobs",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "seq2Mute",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 23,
+			"name": "Mute",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "seq2Previous",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 24,
+			"name": "Previous",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "seq2Next",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 25,
+			"name": "Next",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "drumKnobs",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 27,
+			"name": "Knobs",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "drumMute",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 28,
+			"name": "Mute",
+			"type": "undefined"
+		}]
+	},{
+		"id": "drumPrevious",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 29,
+			"name": "Previous",
+			"type": "undefined"
+		}]
+	},{
+		"id": "drumNext",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 30,
+			"name": "Next",
+			"type": "undefined"
+		}]
+	},
+
+	{
+		"id": "sync",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 101,
+			"name": "Sync",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "tap",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 103,
+			"name": "Tap",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "swing_track",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 97,
+			"name": "Track",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "proba_track",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 99,
+			"name": "Track",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "trns_lnk",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 80,
+			"name": "Trns Lnk",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "prst_lnk",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 81,
+			"name": "Prst Lnk",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "preset_previous",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 82,
+			"name": "Previous",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "preset_next",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 83,
+			"name": "Next",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "channel",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 84,
+			"name": "Channel",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "lst_step",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 85,
+			"name": "Lst Step",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "shift",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 86,
+			"name": "Shift",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "record",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 87,
+			"name": "Record",
+			"type": "undefined",
+		}]
+	}, {
+		"id": "knobSwing",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 96,
+			"name": "Swing",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "knobRandomness",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 98,
+			"name": "Randomness",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "knobProba",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 100,
+			"name": "Probability",
+			"type": "undefined"
+		}]
+	}, {
+		"id": "knobRate",
+		"displayed_on_test_only": 1,
+		"items": [
+		{
+			"id": 102,
+			"name": "Rate",
+			"type": "undefined"
+		}]
+	}
+
+	]
+
+}

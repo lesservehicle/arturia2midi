@@ -20,5 +20,6 @@ python-dateutil==2.9.0.post0
 scipy==1.12.0
 shiboken6==6.6.2
 six==1.16.0
+tomark==0.1.4
 zope.event==5.0
 zope.interface==6.2
