@@ -119,10 +119,13 @@ def decode_project_file(project_file_path, parameters_file_path):
             if key == "120_74":
                 swing = value
                 decoded_project[track]['swing'] = swing
-                continue        
+                continue    
+            
+        if track == "unknown":
+            continue    
         
         """
-        Determine if Track 1 is in SEQ or DRUM mode:
+        TODO: Determine if Track 1 is in SEQ or DRUM mode:
 
         This parameter is set per pattern, but a limitation in MIDI allows us to only set one instrument type per track.
         Therefore, we'll derive the mode from the first pattern in the track.
@@ -131,14 +134,7 @@ def decode_project_file(project_file_path, parameters_file_path):
         Track 1 (123), Pattern 1 (1):
                 Key: Value              Binary
             -   123_100_1: 26       ->  00011010
-            -   
         """
-        
-        if track == "track1":
-            if key == "123_100_1":
-                
-        elif track == "unknown":
-            continue
 
         decoded_key = decode_key(key, parameters_data)
 
@@ -234,7 +230,7 @@ def to_midi_track(midi_data, decoded_track, track, is_drum):
     # Create an Instrument instance
     # I'd like to offer support for changing this based on user choice
     if is_drum:
-        instrument = pretty_midi.Instrument(is_drum=is_drum, program=pretty_midi.instrument_name_to_program("Drums"))
+        instrument = pretty_midi.Instrument(is_drum=is_drum, program=0)
     else:
         instrument = pretty_midi.Instrument(
             program=pretty_midi.instrument_name_to_program("Acoustic Grand Piano")
