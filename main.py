@@ -3,8 +3,8 @@ import re
 import argparse
 import pretty_midi
 from json_repair import repair_json
-from pprint import pprint
 from tomark import Tomark
+
 
 # Function to load a JSON file
 def load_json_file(file_path):
@@ -79,17 +79,16 @@ def decode_project_file(project_file_path, parameters_file_path):
             decoded_project["device"][key] = value
             continue
 
-        """ 
+        """
             Decoding Tempo
-            
             Tempo is determined by combining three fields for least-significant bits (LSB), middle significance bits (MidSB)
             and most significant bits (MSB). For example, a tempo of 120.00 is represented in the three fields as follows:
-            
+
                   Key: Value                    Binary
                 - 120_70: 96    (MSB)       ->  1100000
                 - 120_71: 93    (MidSB)     ->  1011101
                 - 120_72: 0     (LSB)       ->  0000000
-                
+
                 Combined binary             ->  110000010111010000000
                 In decimal                  ->  12000
                 / 100 for Tempo             ->  120.00
@@ -138,7 +137,7 @@ def decode_project_file(project_file_path, parameters_file_path):
         This parameter is set per pattern, but a limitation in MIDI allows us to only set one instrument type per track.
         Therefore, we'll derive the mode from the first pattern in the track.
 
-        The value for SEQ/DRUM mode is derived from the first bit in the value of Parameter ID 100. For example, for 
+        The value for SEQ/DRUM mode is derived from the first bit in the value of Parameter ID 100. For example, for
         Track 1 (123), Pattern 1 (1):
                 Key: Value              Binary
             -   123_100_1: 26       ->  00011010
@@ -304,11 +303,39 @@ def to_midi_track(midi_data, decoded_track, track, is_drum):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--device", "-d", type=str, default="KeyStepPro", help="Coded name of the device to decode data for, eg. KeyStepPro")
-    parser.add_argument("--project", "-p", type=str, default="Sample", help="Name of a project to decode, eg. Sample")
-    parser.add_argument("--markdown", "-t", action='store_true', default=False, help="Print a markdown table of all Parameter IDs")
-    parser.add_argument("--midi", "-m", type=str, help="Enable MIDI export and provide path to output file, eg. Sample.mid")
-    parser.add_argument("--json", "-j", type=str, help="Enable JSON dump of decoded keys and provide path to output file, eg. Sample.json")
+    parser.add_argument(
+        "--device",
+        "-d",
+        type=str,
+        default="KeyStepPro",
+        help="Coded name of the device to decode data for, eg. KeyStepPro",
+    )
+    parser.add_argument(
+        "--project",
+        "-p",
+        type=str,
+        default="Sample",
+        help="Name of a project to decode, eg. Sample",
+    )
+    parser.add_argument(
+        "--markdown",
+        "-t",
+        action="store_true",
+        default=False,
+        help="Print a markdown table of all Parameter IDs",
+    )
+    parser.add_argument(
+        "--midi",
+        "-m",
+        type=str,
+        help="Enable MIDI export and provide path to output file, eg. Sample.mid",
+    )
+    parser.add_argument(
+        "--json",
+        "-j",
+        type=str,
+        help="Enable JSON dump of decoded keys and provide path to output file, eg. Sample.json",
+    )
     args = parser.parse_args()
 
     # Paths to your project and parameters (preferences) files
@@ -329,7 +356,9 @@ if __name__ == "__main__":
                 is_drum = True
             else:
                 is_drum = False
-            midi_data = to_midi_track(midi_data, decoded_project_data, f"track{i}", is_drum)
+            midi_data = to_midi_track(
+                midi_data, decoded_project_data, f"track{i}", is_drum
+            )
 
         # Write out the MIDI data to a new file
         midi_data.write(args.midi)
@@ -343,7 +372,6 @@ if __name__ == "__main__":
 
         print(f"Decoded project written to {args.json}")
 
-
     if args.markdown:
         params = []
 
@@ -355,19 +383,17 @@ if __name__ == "__main__":
                 ):
                     continue
                 elif "desc" in value:
-                    param = {}   
-                    param["id"] = int(param_id)                                 
+                    param = {}
+                    param["id"] = int(param_id)
                     param["desc"] = value["desc"]
                     params.append(param)
-        
-    
+
         # dedup
         params = [dict(t) for t in {tuple(d.items()) for d in params}]
 
         # sort by ID
-        params = sorted(params, key=lambda d: d['id'])
-        
+        params = sorted(params, key=lambda d: d["id"])
+
         # convert to markdown table
         markdown = Tomark.table(params)
         print(markdown)
-    
