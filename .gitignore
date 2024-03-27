@@ -2,3 +2,10 @@ output.json
 *.mid
 .vscode/
 __pycache__/
+.pytest_cache/
+arturia2midi.code-workspace
+.DS_Store
+MIDI/*
+JSON/*
+Projects/*
+!Projects/Sample.KeyStepPro

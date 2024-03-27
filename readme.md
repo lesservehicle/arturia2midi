@@ -8,6 +8,7 @@ Converts Arturia MIDI Control Center project files to MIDI files. Please take no
     - Note pitch
     - Note gate
     - Note velocity
+    - Step Active
     - Project tempo
 - Output can be buggy. I'm working on it!
 
