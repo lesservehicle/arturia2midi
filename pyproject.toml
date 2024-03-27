@@ -1,0 +1,32 @@
+[build-system]
+requires = [
+    "setuptools",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arturia2midi"
+dependencies = [
+    "pretty_midi",
+    "json_repair",
+    "tomark"
+]
+version = "0.0.1"
+authors = [
+  { name="Adam Copeland", email="adam@lesservehicle.com" },
+]
+description = "Converts Arturia MIDI Control Center project files to MIDI files"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+arturia2midi = "arturia2midi:main_cli"
+
+[project.urls]
+Homepage = "https://github.com/lesservehicle/arturia2midi"
+Issues = "https://github.com/lesservehicle/arturia2midi"

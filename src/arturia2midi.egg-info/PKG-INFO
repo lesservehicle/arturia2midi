@@ -1,3 +1,20 @@
+Metadata-Version: 2.1
+Name: arturia2midi
+Version: 0.0.1
+Summary: Converts Arturia MIDI Control Center project files to MIDI files
+Author-email: Adam Copeland <adam@lesservehicle.com>
+Project-URL: Homepage, https://github.com/lesservehicle/arturia2midi
+Project-URL: Issues, https://github.com/lesservehicle/arturia2midi
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pretty_midi
+Requires-Dist: json_repair
+Requires-Dist: tomark
+
 # arturia2midi
 
 Converts Arturia MIDI Control Center project files to MIDI files. Please take note of the following limitations:

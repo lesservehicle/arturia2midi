@@ -9,3 +9,5 @@ MIDI/*
 JSON/*
 Projects/*
 !Projects/Sample.KeyStepPro
+build/
+dist/

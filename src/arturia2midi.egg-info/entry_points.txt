@@ -1,0 +1,2 @@
+[console_scripts]
+arturia2midi = arturia2midi:main_cli
