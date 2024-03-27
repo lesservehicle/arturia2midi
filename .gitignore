@@ -8,7 +8,7 @@ arturia2midi.code-workspace
 MIDI/*
 JSON/*
 Projects/*
-!Projects/Sample.KeyStepPro
-build/
-dist/
+build/*
+dist/*
 src/arturia2midi.egg-info/
+!Projects/Sample.KeyStepPro
