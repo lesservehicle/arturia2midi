@@ -5,8 +5,6 @@ __pycache__/
 .pytest_cache/
 arturia2midi.code-workspace
 .DS_Store
-MIDI/*
-JSON/*
 Projects/*
 build/*
 dist/*
