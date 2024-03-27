@@ -59,7 +59,7 @@ print(f"Reading parameters file {parameters_file_path}")
 
 # Decode the project file
 decoded_project_data = decode_project_file(
-    project_file_path, 
+    project_file_path,
     parameters_file_path
 )
 
@@ -97,6 +97,6 @@ if args.markdown:
     print("-----------------------------")
     print(markdown)
 
-print(f"Success!\n")
+print("Success!\n")
 
 sys.exit()
