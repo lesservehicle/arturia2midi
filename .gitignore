@@ -11,3 +11,4 @@ Projects/*
 !Projects/Sample.KeyStepPro
 build/
 dist/
+src/arturia2midi.egg-info/
